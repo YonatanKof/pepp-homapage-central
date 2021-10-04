@@ -1,0 +1,107 @@
+@use "../abstracts" as *;
+body {
+    --dd-space-1: 0.25rem;
+    --dd-space-2: 0.5rem;
+    --dd-space-3: 0.75rem;
+}
+
+.dropdown {
+    position: relative;
+}
+
+[class*="custom-input"] {
+    @include state-regular;
+    height: $box-height-overlay;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--dd-space-3);
+    position: relative;
+    cursor: pointer;
+    p {
+        font-size: $font-size-1-small;
+    }
+    svg {
+        fill-opacity: 0.5;
+    }
+    &:hover {
+        svg {
+            fill-opacity: 1;
+        }
+    }
+}
+
+[class*="dropdown-content"] {
+    @include state-regular;
+    display: none;
+    font-family: $font-family--body;
+    font-size: $font-size-1-small;
+    position: absolute;
+    min-width: max-content;
+    top: calc(100% + var(--dd-space-1));
+    max-height: calc(var(--dd-space-3) * 18);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 999;
+    
+    hr {
+        margin: var(--dd-space-2) auto;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: var(--dd-space-2);
+    }
+    p {
+        padding: var(--dd-space-2);
+        font-size: $font-size-1-small;
+    }
+    li {
+        font-size: $font-size-1-small;
+        line-height: 1.5rem;
+        background-color: white;
+        border-radius: $border-radius;
+        padding: var(--dd-space-2) var(--dd-space-3);
+        cursor: pointer;
+        transition: background-color ease-in-out 0.25s;
+        margin-bottom: var(--dd-space-1);
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:hover {
+            background-color: $color-system-4-weak;
+            color: $color-system-1-full;
+        }
+        span{
+            display: flex;
+            align-items: center;
+        }
+    }
+    svg {
+        margin-inline-end: var(--dd-space-3);
+        fill-opacity: 0.8;
+        transition: fill-opacity ease-in-out 0.25s;
+        &:hover {
+            fill-opacity: 1;
+        }
+    }
+    .active-dropdown-item {
+        background-color: $color-system-1-full;
+        color: $color-system-invert-1-full;
+    }
+}
+.dropdown-content-end {
+    right: 0;
+}
+
+.dropdown-content-fit {
+    min-width: unset;
+    left: 0;
+    right: 0;
+    // li{
+    //     white-space: nowrap;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    // }
+}

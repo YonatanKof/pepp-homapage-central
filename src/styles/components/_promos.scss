@@ -1,0 +1,38 @@
+@use "../abstracts" as *; 
+
+.promo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @media screen and (max-width: $screen-sm) {
+        grid-template-columns: 1fr;
+    }
+    margin-bottom: 1rem;
+    @include content-gap;
+    &__item {
+        height: 20rem;
+        @media screen and (max-width: $screen-sm) {
+            height: 12rem;
+        }
+        border-radius: $border-radius;
+        overflow: hidden;
+        background-size: cover;
+        @include clickable-image-base;
+    }
+    &__title {
+        font-weight: $font-weight--bold;
+        font-size: $font-size-5-large;
+        color: $color-system-invert-1-full;
+        text-transform: capitalize;
+        // align-self: flex-end;
+    }
+    &__content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include linear-gradient(180deg, black, 0.8, 50%);
+        padding: 1rem;
+        display: flex;
+    }
+}
