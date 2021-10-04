@@ -9,4 +9,5 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <style lang="scss">
 @use "./styles/abstracts/" as *;
+@use "./styles/components/" as *;
 </style>
