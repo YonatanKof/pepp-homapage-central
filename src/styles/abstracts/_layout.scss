@@ -1,0 +1,26 @@
+@use "./vars" as *;
+
+.wrapper {
+    margin: 0 auto;
+} 
+
+.content {
+    height: 100%;
+    display: grid;
+    grid-template-areas: "carousel" "promo" "portfolio" "footer";
+}
+.carousel{
+    grid-area: carousel;
+}
+
+.promo {
+    grid-area: promo;
+    @include content-spacing;
+}
+.portfolio {
+    grid-area: portfolio;
+}
+
+.footer{
+    grid-area: footer;
+}
