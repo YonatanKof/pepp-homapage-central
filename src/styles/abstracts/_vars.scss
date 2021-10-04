@@ -50,6 +50,7 @@ $color-primary: #1a1a1a;
 $color-success: green;
 $color-caution: red;
 $color-link: #1766a6;
+$color-link-active: #0f0e69;
 
 //! Grad
 @mixin linear-gradient($deg, $clr, $int, $end) {

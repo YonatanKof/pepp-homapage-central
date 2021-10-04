@@ -4,8 +4,10 @@
 // Typography style - This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
 
-@import url("./fonts/Inter/inter.css");
-@import url("./fonts/Montserrat/montserrat.css");
+// @import url("./fonts/Inter/inter.css");
+// @use "../../assets/fonts/Inter/inter.css";
+@import url("@/assets/fonts/Montserrat/montserrat.css");
+// @use "../../assets/fonts/Montserrat/montserrat.css";
 
 
 $font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont,
@@ -84,6 +86,11 @@ a {
     }
 }
 
+.router-link-active{
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .title-1-xs {
     font-weight: 600;
     font-size: $font-size-2-regular;
@@ -95,7 +102,7 @@ a {
 .title-4-lg {
     font-weight: 700;
     font-size: $font-size-7-Xlarge;
-    color: white;
+    // color: white;
     line-height: 1.1em;
     @media screen and (max-width: $screen-lg) {
         font-size: $font-size-6-Xlarge;
