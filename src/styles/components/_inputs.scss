@@ -34,7 +34,6 @@ body {
 
 [class*="dropdown-content"] {
     @include state-regular;
-    display: none;
     font-family: $font-family--body;
     font-size: $font-size-1-small;
     position: absolute;
