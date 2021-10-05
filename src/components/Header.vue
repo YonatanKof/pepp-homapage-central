@@ -2,7 +2,7 @@
 	<header class="wrapper header">
 		<div class="header-start">
 			<a id="logo" class="logo" href="/HomePage">
-				<img class="logo" src="https://pepperihomepage.github.io/Public/eyewear/assets/logo-myBrand.svg" />
+				<img src="https://pepperihomepage.github.io/Public/eyewear/assets/logo-myBrand.svg" />
 			</a>
 			<div class="links hidden-on-tablet">
 				<a class="link" onclick="customHeader.newCart('OpticalFrames');">Optical Frames</a>
@@ -14,19 +14,14 @@
 		</div>
 		<div class="header-end">
 			<div id="links-dd" class="dropdown">
-				<button
-					class="button-weak-invert button-icon"
-					v-click-outside="onClickOutside"
-					@click="isShowHedaerLinks = !isShowHedaerLinks"
+				<ButtonIcon
+					class="hidden-on-web"
+					v-click-outside="hideLinksMenu"
+					@click="isShowHeaderLinks = !isShowHeaderLinks"
 				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-						<path
-							fill-rule="evenodd"
-							d="M19,16 C19.5522847,16 20,16.4477153 20,17 C20,17.5522847 19.5522847,18 19,18 L5,18 C4.44771525,18 4,17.5522847 4,17 C4,16.4477153 4.44771525,16 5,16 L19,16 Z M19,11 C19.5522847,11 20,11.4477153 20,12 C20,12.5522847 19.5522847,13 19,13 L5,13 C4.44771525,13 4,12.5522847 4,12 C4,11.4477153 4.44771525,11 5,11 L19,11 Z M19,6 C19.5522847,6 20,6.44771525 20,7 C20,7.55228475 19.5522847,8 19,8 L5,8 C4.44771525,8 4,7.55228475 4,7 C4,6.44771525 4.44771525,6 5,6 L19,6 Z"
-						/>
-					</svg>
-				</button>
-				<div v-if="isShowHedaerLinks" class="dropdown-content-end" id="menuDropdown">
+					<IconMenu />
+				</ButtonIcon>
+				<div v-if="isShowHeaderLinks" class="dropdown-content-end" id="menuDropdown">
 					<ul>
 						<li onclick="customHeader.changePassword()">Wish List</li>
 						<li onclick="customHeader.logout();">Returns</li>
@@ -46,14 +41,9 @@
 				</div>
 			</div>
 			<div id="user-dd" class="dropdown">
-				<button class="button-weak button-icon button-weak-invert" @click="isShowUserData = !isShowUserData">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-						<path
-							fill-rule="evenodd"
-							d="M5.87300934,20 C5.31672677,18.8352719 5,17.5623379 5,16.3333333 C5,13.9259827 6.21522434,12.2548428 8.06569509,11.3364984 C7.70530908,10.3928205 7.5,9.36966701 7.5,8.4 C7.5,5.36243388 9.51471863,4 12,4 C14.4852814,4 16.5,5.36243388 16.5,8.4 C16.5,9.36966701 16.2946909,10.3928205 15.9343049,11.3364984 C17.7847757,12.2548428 19,13.9259827 19,16.3333333 C19,17.5623379 18.6832732,18.8352719 18.1269907,20 C17.7963837,20 17.3817618,20 16.883125,20 C15.7220834,20 15.7220834,19.3712729 15.8841722,19.0335104 C16.2755898,18.2178696 16.5,17.329449 16.5,16.5 C16.5,15.0183086 15.7838916,14.0593118 14.6788931,13.5264125 C13.9304475,14.4190907 13.00359,15 12,15 C10.99641,15 10.0695525,14.4190907 9.32110687,13.5264125 C8.21610842,14.0593118 7.5,15.0183086 7.5,16.5 C7.5,17.3265901 7.72286593,18.211746 8.11178644,19.0250739 C8.2747433,19.3658565 8.2747433,20 7.14578125,20 C6.64072083,20 6.21646352,20 5.87300934,20 Z M12,12.5 C13.1045695,12.5 14,10.2997114 14,8.64285714 C14,6.98600289 13.1045695,6.5 12,6.5 C10.8954305,6.5 10,6.98600289 10,8.64285714 C10,10.2997114 10.8954305,12.5 12,12.5 Z"
-						/>
-					</svg>
-				</button>
+				<ButtonIcon v-click-outside="hideUserMenu" @click="isShowUserData = !isShowUserData">
+					<IconAvatar />
+				</ButtonIcon>
 				<div v-if="isShowUserData" class="dropdown-content-end" id="myDropdown">
 					<ul>
 						<p class="dimmed">User Name</p>
@@ -89,29 +79,101 @@
 
 <script>
 import vClickOutside from "click-outside-vue3";
+// import HeaderMenuLinks from "./HeaderMenuLinks.vue";
+import ButtonIcon from "./ButtonIcon.vue";
+import IconMenu from "./icons/IconMenu.vue";
+import IconAvatar from "./icons/IconAvatar.vue";
+
 export default {
 	name: "ToggleDiv",
+	components: {
+		// HeaderMenuLinks,
+		ButtonIcon,
+		IconMenu,
+		IconAvatar,
+	},
 	directives: {
 		clickOutside: vClickOutside.directive,
 	},
 	data() {
 		return {
 			isShowUserData: false,
-			isShowHedaerLinks: false,
+			isShowHeaderLinks: false,
 		};
 	},
 	props: {
 		msg: String,
 	},
 	methods: {
-		hideIt() {
-			this.isShowHedaerLinks = false;
+		hideLinksMenu() {
+			this.isShowHeaderLinks = false;
+		},
+		hideUserMenu() {
+			this.isShowUserData = false;
 		},
 		onClickOutside(event) {
-			return this.hideIt(event);
+			return this.hideLinksMenu(event);
+		},
+		onClickOutside(event) {
+			return this.hideUserMenu(event);
 		},
 	},
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@use "../styles/abstracts" as *;
+
+.header {
+	@include content-spacing;
+	height: max-content;
+	display: flex;
+	justify-content: space-between;
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+	background: $color-system-1-full;
+	box-shadow: $shadow-box;
+	height: $header-height;
+	z-index: 9999;
+	position: sticky;
+	top: 0;
+}
+
+.logo {
+	max-height: 2.5rem;
+	margin-inline-end: 1rem;
+}
+
+.header-start,
+.header-end {
+	display: flex;
+	align-items: center;
+}
+.header-start {
+	.links{
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+	}
+	.link {
+		color: $color-system-invert-2-dimmed;
+		font-size: $font-size-2-regular;
+		font-weight: 600;
+		// margin-inline-end: 1rem;
+		transition: color ease-in-out 0.25s;
+		&:hover {
+			color: $color-system-invert-1-full;
+		}
+	}
+}
+.header-end {
+	button {
+		margin-inline-start: 0.5rem;
+	}
+}
+
+.expand-button {
+	display: none;
+}
+</style>
