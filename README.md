@@ -1,4 +1,9 @@
-# Homepage Central
+# Pepperi's Homepage Central
+
+Showcasing Pepperi's template homepage designs 
+
+![image](https://i.imgur.com/dHDdO51.png)
+### About 
 
 This project one is using **Vue 3** + **Vite**
 
