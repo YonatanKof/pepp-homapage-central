@@ -1,9 +1,9 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+import HomepageCentral from "./components/HomepageCentral.vue";
 </script>
 
 <template>
-	<HelloWorld />
+	<HomepageCentral />
 	<router-view></router-view>
 </template>
 
