@@ -80,9 +80,9 @@
 <script>
 import vClickOutside from "click-outside-vue3";
 // import HeaderMenuLinks from "./HeaderMenuLinks.vue";
-import ButtonIcon from "./ButtonIcon.vue";
-import IconMenu from "./icons/IconMenu.vue";
-import IconAvatar from "./icons/IconAvatar.vue";
+import ButtonIcon from "../ButtonIcon.vue";
+import IconMenu from "../icons/IconMenu.vue";
+import IconAvatar from "../icons/IconAvatar.vue";
 
 export default {
 	name: "ToggleDiv",
