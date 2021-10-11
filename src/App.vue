@@ -6,8 +6,3 @@ import HomepageCentral from "./components/HomepageCentral.vue";
 	<HomepageCentral />
 	<router-view></router-view>
 </template>
-
-<style lang="scss">
-@use "./styles/abstracts/" as *;
-@use "./styles/components/" as *;
-</style>
