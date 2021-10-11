@@ -17,3 +17,7 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 		</main>
 	</body>
 </template>
+
+<style>
+/* @import "../assets/fonts/Montserrat/montserrat.css"; */
+</style>
