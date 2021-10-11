@@ -1,15 +1,5 @@
 @use "./vars" as *;
 
-// -----------------------------------------------------------------------------
-// Typography style - This file contains all @font-face declarations, if any.
-// -----------------------------------------------------------------------------
-
-// @import url("./fonts/Inter/inter.css");
-// @use "../../assets/fonts/Inter/inter.css";
-@import url("@/assets/fonts/Montserrat/montserrat.css");
-// @use "../../assets/fonts/Montserrat/montserrat.css";
-
-
 $font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont,
     "Segoe UI", Roboto, Arial, sans-serif;
 $font-family--title: "Montserrat", Georgia, serif;
@@ -24,12 +14,12 @@ $font-weight--bolder: 900;
     -moz-osx-font-smoothing: grayscale;
 }
 
-@supports (font-variation-settings: normal) {
-    html,
-    body {
-        font-family: "Inter var", sans-serif;
-    }
-}
+// @supports (font-variation-settings: normal) {
+//     html,
+//     body {
+//         font-family: "Inter var", sans-serif;
+//     }
+// }
 
 html,
 body {
