@@ -122,8 +122,6 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../styles/abstracts" as *;
-
 .header {
 	@include content-spacing;
 	height: max-content;

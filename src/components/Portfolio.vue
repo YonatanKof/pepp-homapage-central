@@ -65,3 +65,68 @@
 		</a>
 	</div>
 </template>
+
+<style lang="scss">
+.portfolio {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	@media screen and (max-width: $screen-sm) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include content-spacing;
+	@include content-gap;
+	&__item {
+		text-align: center;
+	}
+	&__main-title {
+		grid-column: 1 / 5;
+		@media screen and (max-width: $screen-sm) {
+			grid-column: 1 / 3;
+		}
+		font-size: $font-size-6-Xlarge;
+		text-align: center;
+		text-transform: uppercase;
+		margin-top: 1rem;
+	}
+	&__image {
+		height: 12rem;
+		border-radius: $border-radius;
+		overflow: hidden;
+		@include clickable-image-base;
+		background-size: cover;
+	}
+	&__content {
+		font-size: $font-size-4-bigger;
+		color: $color-system-1-full;
+		margin-block-start: 1rem;
+	}
+	&__title {
+		color: $color-system-1-full;
+		text-transform: capitalize;
+		margin-bottom: 0.25rem;
+		opacity: 0.9;
+	}
+	&__price {
+		margin-top: 0.5rem;
+		font-weight: $font-weight--bolder;
+		letter-spacing: 0.075em;
+		font-style: italic;
+		span {
+			letter-spacing: normal;
+			font-family: $font-family--body;
+			margin-top: 0.5rem;
+			font-weight: $font-weight--normal;
+		}
+	}
+	&__price-details {
+		display: block;
+		opacity: 0.8;
+		font-size: $font-size-1-small;
+	}
+	&__price-before {
+		text-decoration: line-through;
+		opacity: 0.8;
+		color: $color-caution;
+	}
+}
+</style>
