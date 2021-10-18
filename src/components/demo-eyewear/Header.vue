@@ -1,9 +1,10 @@
 <template>
 	<header class="wrapper header">
 		<div class="header-start">
-			<a id="logo" class="logo" href="/HomePage">
-				<img src="https://pepperihomepage.github.io/Public/eyewear/assets/logo-myBrand.svg" />
-			</a>
+			<router-link class="logo" to="/eyewear-demo">
+				<img src="../../assets/logo-myBrand.svg" />
+			</router-link>
+		
 			<div class="links hidden-on-tablet">
 				<a class="link" onclick="customHeader.newCart('OpticalFrames');">Optical Frames</a>
 				<a class="link" onclick="customHeader.newCart('Lenses');">Lenses</a>
@@ -67,9 +68,8 @@ export default {
 	}
 	.link {
 		color: $color-system-invert-2-dimmed;
-		font-size: $font-size-2-regular;
+		font-size: $font-size-1-small;
 		font-weight: 600;
-		// margin-inline-end: 1rem;
 		transition: color ease-in-out 0.25s;
 		&:hover {
 			color: $color-system-invert-1-full;
