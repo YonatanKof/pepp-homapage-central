@@ -1,11 +1,7 @@
 <template>
 	<section id="carousel" class="carousel">
 		<div id="slides" class="slides">
-			<div
-				class="slide"
-				data-state="active"
-				style="background-image: url(http://storage.pepperi.com/Eyewear/image12.jpg); display: block"
-			>
+			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `); display: block;`">
 				<div class="gard-overlay">
 					<button id="prev" class="button-weak-invert button-icon hidden-on-mobile" onclick="minusSlide()">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -16,10 +12,9 @@
 						</svg>
 					</button>
 					<div class="slide-text">
-						<!-- <div id="shop_now">Branded Collection</div> -->
-						<h1 class="title">Infinite looks</h1>
-						<p class="subtitle">Amazing Sunglasses At just <strong>$99</strong></p>
-						<button onclick="newCart('99$');" class="strong-btn-invert body-md bolder">Shop Now!</button>
+						<h1 class="title">{{ slideTitle }}</h1>
+						<p class="subtitle" v-html="slideSubTitle"></p>
+						<button :onclick="`parent.open('` + buttonLink + `')`" class="strong-btn-invert body-md bolder">{{ buttonText }}</button>
 					</div>
 					<button id="next" class="button-weak-invert button-icon hidden-on-mobile" onclick="plusSlide()">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -33,26 +28,20 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="slide-controllers">
-			<div id="indicators" class="indicators">
-				<div class="radio-box">
-					<input type="radio" name="radio" checked />
-					<span class="radio-dot"></span>
-				</div>
-				<div class="radio-box">
-					<input type="radio" name="radio" />
-					<span class="radio-dot"></span>
-				</div>
-				<div class="radio-box">
-					<input type="radio" name="radio" />
-					<span class="radio-dot"></span>
-				</div>
-			</div>
-			<button onclick="customHomepage.playerClick();" class="pause button-weak" id="player"></button>
-		</div>
+		<SlideControllers />
 	</section>
 </template>
+
+<script>
+import SlideControllers from "../SlideControllers.vue";
+
+export default {
+	components: {
+		SlideControllers,
+	},
+	props: ["imageURL", "slideTitle", "slideSubTitle", "buttonText", "buttonLink"],
+};
+</script>
 
 <style lang="scss">
 .carousel {
@@ -70,6 +59,8 @@
 }
 
 .slide {
+	// display: block;
+	// background-image: url(http://storage.pepperi.com/Eyewear/image12.jpg);
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -141,95 +132,5 @@
 
 .slide[data-state="active"] {
 	display: block;
-}
-
-.slide-controllers {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0.25rem 0;
-	cursor: default;
-	button {
-		margin-inline-start: 0.5rem;
-		background-color: transparent;
-		height: 2rem;
-		width: 2rem;
-		background-position: center;
-		background-size: 2rem;
-		background-repeat: no-repeat;
-		margin: 0;
-		border-radius: $border-radius;
-		transition: background-color ease-in-out 0.25s;
-		&:hover {
-			background-color: $color-system-4-weak;
-		}
-	}
-	.pause {
-		background-image: url("https://storage.pepperi.com/PreSales/NewFoodDemoImg/pause.svg");
-	}
-	.play {
-		background-image: url("https://storage.pepperi.com/PreSales/NewFoodDemoImg/play.svg");
-	}
-}
-
-.indicators {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	height: 3rem;
-	padding: 0 1rem;
-	position: relative;
-	&:active {
-		box-shadow: none;
-	}
-}
-
-$radio-size: 1rem;
-
-.radio-box {
-	display: block;
-	position: relative;
-	cursor: pointer;
-	user-select: none;
-	height: $radio-size;
-	width: $radio-size;
-	margin-inline-end: 0.75rem;
-	&:last-child {
-		margin-inline-end: 0;
-	}
-	input {
-		height: $radio-size;
-		width: $radio-size;
-		position: absolute;
-		opacity: 0;
-		cursor: pointer;
-		&:checked ~ .radio-dot {
-			background-color: $color-system-1-full;
-		}
-	}
-}
-
-.radio-dot {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: $radio-size;
-	width: $radio-size;
-	background-color: $color-system-3-dim;
-	border-radius: 50%;
-	transition: background-color ease-in-out 0.25s, box-shadow ease-in-out 0.1s;
-	:after {
-		content: "";
-		position: absolute;
-		display: none;
-	}
-	&:hover {
-		background-color: $color-system-2-dimmed;
-	}
-	&:active,
-	&:focus {
-		box-shadow: $shadow-box-focus;
-	}
 }
 </style>

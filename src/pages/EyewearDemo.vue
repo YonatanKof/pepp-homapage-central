@@ -10,14 +10,17 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 	<body>
 		<Header />
 		<main class="wrapper content">
-			<Slideshow />
+				<!-- imageURL="http://storage.pepperi.com/Eyewear/image12.jpg" -->
+			<Slideshow
+				imageURL="../../public/eyewear-hero-1.jpg"
+				slideTitle="Infinite looks"
+				slideSubTitle="Amazing Sunglasses At just <strong>$99</strong>"
+				buttonText="Shop Now!"
+				buttonLink="https://wwape.com/"
+			/>
 			<Promos />
 			<Portfolio />
 			<Footer />
 		</main>
 	</body>
 </template>
-
-<style>
-/* @import "../assets/fonts/Montserrat/montserrat.css"; */
-</style>
