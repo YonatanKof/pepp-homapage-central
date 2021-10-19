@@ -9,8 +9,7 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 <template>
 	<body>
 		<Header />
-		<main class="wrapper content">
-				<!-- imageURL="http://storage.pepperi.com/Eyewear/image12.jpg" -->
+		<main class="wrapper content eyewear-grid">
 			<Slideshow
 				imageURL="../../public/eyewear-hero-1.jpg"
 				slideTitle="Infinite looks"
@@ -24,3 +23,23 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 		</main>
 	</body>
 </template>
+
+<style lang="scss">
+.eyewear-grid {
+	grid-template-areas: "carousel" "promo" "portfolio" "footer";
+}
+.carousel {
+	grid-area: carousel;
+}
+.promo {
+	grid-area: promo;
+	@include content-spacing;
+}
+.portfolio {
+	grid-area: portfolio;
+}
+
+.footer {
+	grid-area: footer;
+}
+</style>
