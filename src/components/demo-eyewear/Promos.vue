@@ -1,32 +1,23 @@
+<script setup>
+import Card from "./PromoCard.vue";
+</script>
 <template>
 	<div class="promo">
-		<a
-			class="promo__item"
-			onclick="newCart('Trends');"
-			style="background-image: url(http://storage.pepperi.com/Eyewear/image15.jpg)"
-		>
-			<div class="promo__content">
-				<h3 class="promo__title">Fashion trends</h3>
-			</div>
-		</a>
-		<a
-			class="promo__item"
-			onclick="newCart('Newarrivals');"
-			style="background-image: url(http://storage.pepperi.com/Eyewear/image16.jpg)"
-		>
-			<div class="promo__content">
-				<h3 class="promo__title">New arrivals</h3>
-			</div>
-		</a>
-		<a
-			class="promo__item"
-			onclick="newCart('Bestsellers');"
-			style="background-image: url(http://storage.pepperi.com/Eyewear/image17.jpg)"
-		>
-			<div class="promo__content">
-				<h3 class="promo__title">Best sellers</h3>
-			</div>
-		</a>
+		<Card
+			buttonOnClick="newCart('Trends');"
+			cardImageURL="http://storage.pepperi.com/Eyewear/image15.jpg"
+			cardTitle="Fashion trends"
+		/>
+		<Card
+			buttonOnClick="newCart('Newarrivals');"
+			cardImageURL="http://storage.pepperi.com/Eyewear/image16.jpg"
+			cardTitle="New arrivals"
+		/>
+		<Card
+			buttonOnClick="newCart('Bestsellers');"
+			cardImageURL="http://storage.pepperi.com/Eyewear/image17.jpg"
+			cardTitle="Best sellers"
+		/>
 	</div>
 </template>
 
@@ -39,32 +30,5 @@
 	}
 	margin-bottom: 1rem;
 	@include content-gap;
-	&__item {
-		height: 20rem;
-		@media screen and (max-width: $screen-sm) {
-			height: 12rem;
-		}
-		border-radius: $border-radius;
-		overflow: hidden;
-		background-size: cover;
-		@include clickable-image-base;
-	}
-	&__title {
-		font-weight: $font-weight--bold;
-		font-size: $font-size-5-large;
-		color: $color-system-invert-1-full;
-		text-transform: capitalize;
-		// align-self: flex-end;
-	}
-	&__content {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		@include linear-gradient(180deg, black, 0.8, 50%);
-		padding: 1rem;
-		display: flex;
-	}
 }
 </style>
