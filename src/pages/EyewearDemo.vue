@@ -7,11 +7,12 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 </script>
 
 <template>
-	<body>
+	<div>
 		<Header />
 		<main class="wrapper content eyewear-grid">
 			<Slideshow
-				imageURL="../../public/eyewear-hero-1.jpg"
+				class="eyewear-carousel"
+				imageURL="eyewear-hero-1.jpg"
 				slideTitle="Infinite looks"
 				slideSubTitle="Amazing Sunglasses At just <strong>$99</strong>"
 				buttonText="Shop Now!"
@@ -21,25 +22,25 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 			<Portfolio />
 			<Footer />
 		</main>
-	</body>
+	</div>
 </template>
 
 <style lang="scss">
 .eyewear-grid {
-	grid-template-areas: "carousel" "promo" "portfolio" "footer";
+	grid-template-areas: "eyewear_carousel" "eyewear_promo" "eyewear_portfolio" "eyewear_footer";
 }
-.carousel {
-	grid-area: carousel;
+.eyewear-carousel {
+	grid-area: eyewear_carousel;
 }
 .promo {
-	grid-area: promo;
+	grid-area: eyewear_promo;
 	@include content-spacing;
 }
 .portfolio {
-	grid-area: portfolio;
+	grid-area: eyewear_portfolio;
 }
 
 .footer {
-	grid-area: footer;
+	grid-area: eyewear_footer;
 }
 </style>
