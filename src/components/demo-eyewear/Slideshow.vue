@@ -1,6 +1,6 @@
 <template>
 	<section id="carousel" class="carousel">
-		<div id="slides" class="slides">
+		<div id="slides" class="slides" :style="`height:` + slidesHeight + `;`">
 			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `); display: block;`">
 				<div class="gard-overlay">
 					<button id="prev" class="button-weak-invert button-icon hidden-on-mobile" onclick="minusSlide()">
@@ -14,7 +14,9 @@
 					<div class="slide-text">
 						<h1 class="title">{{ slideTitle }}</h1>
 						<p class="subtitle" v-html="slideSubTitle"></p>
-						<button :onclick="`parent.open('` + buttonLink + `')`" class="strong-btn-invert body-md bolder">{{ buttonText }}</button>
+						<button :onclick="`parent.open('` + buttonLink + `')`" class="strong-btn-invert body-md bolder">
+							{{ buttonText }}
+						</button>
 					</div>
 					<button id="next" class="button-weak-invert button-icon hidden-on-mobile" onclick="plusSlide()">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -36,10 +38,21 @@
 import SlideControllers from "../SlideControllers.vue";
 
 export default {
+	name: "Slideshow",
 	components: {
 		SlideControllers,
 	},
-	props: ["imageURL", "slideTitle", "slideSubTitle", "buttonText", "buttonLink"],
+	props: {
+		slidesHeight: {
+			type: String,
+			default: "32rem",
+		},
+		imageURL: { type: String },
+		slideTitle: { type: String },
+		slideSubTitle: { type: String },
+		buttonText: { type: String },
+		buttonLink: { type: String },
+	},
 };
 </script>
 
@@ -54,7 +67,6 @@ export default {
 .slides {
 	background-color: $color-system-3-dim;
 	position: relative;
-	height: 32rem;
 	width: 100%;
 }
 
