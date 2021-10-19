@@ -1,8 +1,8 @@
 <template>
 	<div class="main-links body-2xs">
 		<router-link to="/">Home</router-link>
-		<!-- <router-link to="/about">About</router-link> -->
 		<router-link to="/eyewear-demo">Eyewear Demo</router-link>
+		<router-link to="/food-demo">Food Demo</router-link>
 	</div>
 </template>
 
