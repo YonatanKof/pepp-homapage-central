@@ -1,6 +1,6 @@
 <template>
 	<section id="carousel" class="carousel">
-		<div id="slides" class="slides" :style="`height:` + slidesHeight + `;`">
+		<div id="slides" class="slides" :class="{ 'carousel-rounded': carouselRounded, 'carousel-shadow': carouselShadow  }" :style="`height:` + slidesHeight + `;`">
 			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `); display: block;`">
 				<div class="gard-overlay">
 					<button v-if="showButtons" id="prev-btn" class="button-weak-invert button-icon hidden-on-mobile" onclick="minusSlide()">
@@ -52,6 +52,8 @@ export default {
 		buttonText: { type: String },
 		buttonLink: { type: String },
 		showButtons: { type: Boolean, default: true },
+		carouselRounded: { type: Boolean, default: false },
+		carouselShadow: { type: Boolean, default: false },
 	},
 };
 </script>
@@ -64,6 +66,13 @@ export default {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+}
+.carousel-rounded {
+	border-radius: $border-radius;
+	overflow: hidden;
+}
+.carousel-shadow {
+	box-shadow: $shadow-box;
 }
 
 .slides {
