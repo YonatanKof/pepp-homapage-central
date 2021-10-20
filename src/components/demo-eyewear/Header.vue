@@ -1,3 +1,8 @@
+<script setup>
+import DropdownLinks from "../DropdownLinks.vue";
+import DropdownUser from "../DropdownUser.vue";
+</script>
+
 <template>
 	<header class="wrapper header eyewear-header">
 		<div class="header-start">
@@ -19,19 +24,6 @@
 		</div>
 	</header>
 </template>
-
-<script>
-import DropdownLinks from "../DropdownLinks.vue";
-import DropdownUser from "../DropdownUser.vue";
-
-export default {
-	name: "ToggleDiv",
-	components: {
-		DropdownLinks,
-		DropdownUser,
-	},
-};
-</script>
 
 <style lang="scss">
 .eyewear-header {
