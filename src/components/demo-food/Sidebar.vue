@@ -20,7 +20,7 @@ import Option from "./Option.vue";
 							<hr />
 						</div>
 					</div>
-					<div class="baselist__options" >
+					<div class="baselist__options">
 						<Option Title="Meat" clickTo="customHomepage.getUDTLists(document.getElementById('list1').innerHTML)" />
 						<Option Title="Dairy" clickTo="customHomepage.getUDTLists(document.getElementById('list2').innerHTML)" />
 						<Option
@@ -30,14 +30,14 @@ import Option from "./Option.vue";
 					</div>
 				</div>
 
-				<button class="regular-button" style="width: 100%;" id="transactionTotal1" onclick="customHomepage.NavigateToActiveCart()">
-					<p id="qty1"></p>
-					<span id="totalText">Go to cart</span>
+				<button class="button-regular" id="transactionTotal1" onclick="customHomepage.NavigateToActiveCart()">
+					<p id="qty1">20</p>
+					Go to cart
 				</button>
 			</div>
 			<hr />
 
-			<button class="strong-btn" onclick="customHomepage.createNewReplenishment()">Replenishment</button>
+			<button class="button-strong" onclick="customHomepage.createNewReplenishment()">Replenishment</button>
 
 			<hr />
 
@@ -66,7 +66,7 @@ import Option from "./Option.vue";
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-    gap: 0.75rem;
+	gap: 0.75rem;
 }
 .response-menu {
 	display: none;
@@ -84,11 +84,7 @@ import Option from "./Option.vue";
 	color: $color-primary;
 	border-radius: 4px;
 	padding: 14px 16px;
-	p {
-		opacity: 0.7;
-		font-size: 16px;
-		line-height: 24px;
-	}
+
 	.bigger {
 		opacity: 1;
 		font-weight: 600;
@@ -110,16 +106,16 @@ import Option from "./Option.vue";
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
-    &__options{
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-    }
+	&__options {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
 }
 
 #qty1 {
 	position: absolute;
+	z-index: 200;
 	background-color: $color-success;
 	color: #ffff;
 	font-size: 12px;
