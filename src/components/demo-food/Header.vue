@@ -1,3 +1,8 @@
+<script setup>
+import DropdownLinks from "../DropdownLinks.vue";
+import DropdownUser from "../DropdownUser.vue";
+</script>
+
 <template>
 	<header class="header food-header">
 		<div class="header-start">
@@ -6,97 +11,21 @@
 			</router-link>
 		</div>
 		<div class="header-end">
-			<div class="left-mobile">
-				<div class="dropdown showMobile">
-					<button
-						class="dropdown"
-						type="button"
-						id="dropdownMenuButton"
-						onclick="customHeader.closeHumanMenu()"
-						data-toggle="dropdown"
-						aria-haspopup="true"
-						aria-expanded="false"
-					>
-						<img src="https://storage.pepperi.com/General/Icons/open-menu-white.svg" alt="user" />
-					</button>
-
-					<div id="dropdown-menu-mobile" class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton">
-						<div id="test-drpd">
-							<div id="userMenuMobile" class="additional_menu">
-								<div class="dropdown-user">
-									<button
-										class="right-buttons img-pos"
-										id="dropdownMenuButton"
-										data-toggle="dropdown"
-										aria-haspopup="true"
-										aria-expanded="false"
-									>
-										<svg class="user-img" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="2 3 20 20">
-											<path
-												fill-opacity="1"
-												fill-rule="evenodd"
-												fill="white"
-												d="M5.87300934,20 C5.31672677,18.8352719 5,17.5623379 5,16.3333333 C5,13.9259827 6.21522434,12.2548428 8.06569509,11.3364984 C7.70530908,10.3928205 7.5,9.36966701 7.5,8.4 C7.5,5.36243388 9.51471863,4 12,4 C14.4852814,4 16.5,5.36243388 16.5,8.4 C16.5,9.36966701 16.2946909,10.3928205 15.9343049,11.3364984 C17.7847757,12.2548428 19,13.9259827 19,16.3333333 C19,17.5623379 18.6832732,18.8352719 18.1269907,20 C17.7963837,20 17.3817618,20 16.883125,20 C15.7220834,20 15.7220834,19.3712729 15.8841722,19.0335104 C16.2755898,18.2178696 16.5,17.329449 16.5,16.5 C16.5,15.0183086 15.7838916,14.0593118 14.6788931,13.5264125 C13.9304475,14.4190907 13.00359,15 12,15 C10.99641,15 10.0695525,14.4190907 9.32110687,13.5264125 C8.21610842,14.0593118 7.5,15.0183086 7.5,16.5 C7.5,17.3265901 7.72286593,18.211746 8.11178644,19.0250739 C8.2747433,19.3658565 8.2747433,20 7.14578125,20 C6.64072083,20 6.21646352,20 5.87300934,20 Z M12,12.5 C13.1045695,12.5 14,10.2997114 14,8.64285714 C14,6.98600289 13.1045695,6.5 12,6.5 C10.8954305,6.5 10,6.98600289 10,8.64285714 C10,10.2997114 10.8954305,12.5 12,12.5 Z"
-											/>
-										</svg>
-										<p id="userName"></p>
-									</button>
-									<hr />
-									<div class="dropdown-content-user">
-										<ul>
-											<li id="userName"></li>
-
-											<li onclick="customHeader.changePassword()">Change Password</li>
-											<li onclick="customHeader.logout();">Logout</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="btn-group">
-					<ul id="header_btn_bar" class="showDesktop" style="list-style: none"></ul>
-				</div>
-			</div>
-			<div class="d-flex justify-content-right">
-				<div id="right_additional_menu">
-					<div class="dropdown">
-						<button onclick="customHeader.closeHamburgerMenu()" class="right-buttons img-pos" id="user-drop">
-							<svg class="user-img" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="2 3 20 20">
-								<path
-									fill-opacity="1"
-									fill-rule="evenodd"
-									fill="white"
-									d="M5.87300934,20 C5.31672677,18.8352719 5,17.5623379 5,16.3333333 C5,13.9259827 6.21522434,12.2548428 8.06569509,11.3364984 C7.70530908,10.3928205 7.5,9.36966701 7.5,8.4 C7.5,5.36243388 9.51471863,4 12,4 C14.4852814,4 16.5,5.36243388 16.5,8.4 C16.5,9.36966701 16.2946909,10.3928205 15.9343049,11.3364984 C17.7847757,12.2548428 19,13.9259827 19,16.3333333 C19,17.5623379 18.6832732,18.8352719 18.1269907,20 C17.7963837,20 17.3817618,20 16.883125,20 C15.7220834,20 15.7220834,19.3712729 15.8841722,19.0335104 C16.2755898,18.2178696 16.5,17.329449 16.5,16.5 C16.5,15.0183086 15.7838916,14.0593118 14.6788931,13.5264125 C13.9304475,14.4190907 13.00359,15 12,15 C10.99641,15 10.0695525,14.4190907 9.32110687,13.5264125 C8.21610842,14.0593118 7.5,15.0183086 7.5,16.5 C7.5,17.3265901 7.72286593,18.211746 8.11178644,19.0250739 C8.2747433,19.3658565 8.2747433,20 7.14578125,20 C6.64072083,20 6.21646352,20 5.87300934,20 Z M12,12.5 C13.1045695,12.5 14,10.2997114 14,8.64285714 C14,6.98600289 13.1045695,6.5 12,6.5 C10.8954305,6.5 10,6.98600289 10,8.64285714 C10,10.2997114 10.8954305,12.5 12,12.5 Z"
-								/>
-							</svg>
-						</button>
-						<div id="myDropdown" class="dropdown-content">
-							<ul>
-								<li id="userName1"></li>
-								<hr style="margin-top: 14px; margin-bottom: 14px" />
-								<li class="icon-pas" onclick="customHeader.changePassword()">Change Password</li>
-								<li class="icon-log" onclick="customHeader.logout();">Logout</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+			<DropdownUser />
 		</div>
 	</header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $food-color-main: rgb(48, 37, 29);
 
 .food-header {
-	// height: $header-height;
-	// display: flex;
-	// align-items: center;
 	background-color: $food-color-main;
 	box-shadow: $shadow-box-hard;
+}
+
+img, .logo {
+	max-height: 2rem;
 }
 
 #header_btn_bar {
