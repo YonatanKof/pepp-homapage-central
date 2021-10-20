@@ -31,7 +31,9 @@ import Option from "./Option.vue";
 				</div>
 
 				<button class="button-regular" id="transactionTotal1" onclick="customHomepage.NavigateToActiveCart()">
-					<p id="qty1">20</p>
+					<p id="qty1" class="body-2xs">
+						<strong>20</strong>
+					</p>
 					Go to cart
 				</button>
 			</div>
@@ -105,11 +107,11 @@ import Option from "./Option.vue";
 .baselist {
 	display: flex;
 	flex-direction: column;
-	gap: 0.75rem;
+	gap: 1rem;
 	&__options {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.75rem;
 	}
 }
 
@@ -118,11 +120,11 @@ import Option from "./Option.vue";
 	z-index: 200;
 	background-color: $color-success;
 	color: #ffff;
-	font-size: 12px;
-	border-radius: 10px;
-	padding: 0 8px;
-	top: -10px;
-	right: -8px;
+	border-radius: 1em;
+	padding: 0.25em 0.7em;
+	top: -0.75em;
+	right: -.75em;
+	box-shadow: $shadow-box-soft;
 }
 
 @media screen and (max-width: $screen-md) {

@@ -129,11 +129,11 @@ export default {
 				font-family: $font-family--title;
 				font-weight: $font-weight--bold;
 				font-size: $font-size-8-Xlarge;
-				margin-bottom: 0.25rem;
+				margin-bottom: 0.5rem;
 			}
 			.subtitle {
 				font-size: $font-size-4-bigger;
-				margin-bottom: 1.5rem;
+				margin-bottom: 1rem;
 			}
 			.desc {
 				font-size: $font-size-3-big;
