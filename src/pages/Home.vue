@@ -11,7 +11,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
-		padding: 2rem 1rem;
+		padding: 2rem;
+		@include content-spacing;
 		height: 100vh;
 		background-color: #F7F7F7;
 		img {

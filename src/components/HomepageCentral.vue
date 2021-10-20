@@ -12,6 +12,7 @@
 	flex-direction: row;
 	gap: 1em;
 	padding: 1rem;
+	@include content-spacing;
 	background-color: #5D8009;
 	a{
 		color: white;
