@@ -3,7 +3,7 @@
 		<div id="slides" class="slides" :style="`height:` + slidesHeight + `;`">
 			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `); display: block;`">
 				<div class="gard-overlay">
-					<button id="prev" class="button-weak-invert button-icon hidden-on-mobile" onclick="minusSlide()">
+					<button v-if="showButtons" id="prev-btn" class="button-weak-invert button-icon hidden-on-mobile" onclick="minusSlide()">
 						<IconSystem>
 							<ArrowLeftAlt />
 						</IconSystem>
@@ -11,11 +11,11 @@
 					<div class="slide-text">
 						<h1 class="title">{{ slideTitle }}</h1>
 						<p class="subtitle" v-html="slideSubTitle"></p>
-						<button :onclick="`parent.open('` + buttonLink + `')`" class="strong-btn-invert body-md bolder">
+						<button :onclick="`parent.open('` + buttonLink + `')`" class="button-strong-invert body-md bolder">
 							{{ buttonText }}
 						</button>
 					</div>
-					<button id="next" class="button-weak-invert button-icon hidden-on-mobile" onclick="plusSlide()">
+					<button v-if="showButtons" id="next-btn" class="button-weak-invert button-icon hidden-on-mobile" onclick="plusSlide()">
 						<IconSystem>
 							<ArrowRightAlt />
 						</IconSystem>
@@ -51,6 +51,7 @@ export default {
 		slideSubTitle: { type: String },
 		buttonText: { type: String },
 		buttonLink: { type: String },
+		showButtons: { type: Boolean, default: true },
 	},
 };
 </script>
@@ -91,7 +92,7 @@ export default {
 		align-items: center;
 		justify-content: space-between;
 		@include linear-gradient(90deg, black, 0.6, 80%);
-		@include content-spacing;
+		// @include content-spacing;
 		@media screen and (max-width: $screen-md) {
 			align-items: flex-end;
 			padding-bottom: 1.5rem;
@@ -103,7 +104,7 @@ export default {
 			color: white;
 			padding: 0 2rem;
 			@media screen and (max-width: $screen-md) {
-				padding: 0;
+				padding: 0 1rem;
 			}
 			#shop_now {
 				font-size: $font-size-1-small;
@@ -143,5 +144,11 @@ export default {
 
 .slide[data-state="active"] {
 	display: block;
+}
+#prev-btn{
+	margin-inline-start: 1.5rem;
+}
+#next-btn{
+	margin-inline-end: 1.5rem;
 }
 </style>
