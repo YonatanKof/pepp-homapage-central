@@ -1,5 +1,10 @@
+<script setup>
+import DropdownLinks from "../DropdownLinks.vue";
+import DropdownUser from "../DropdownUser.vue";
+</script>
+
 <template>
-	<header class="wrapper header">
+	<header class="wrapper header eyewear-header">
 		<div class="header-start">
 			<router-link class="logo" to="/eyewear-demo">
 				<img src="../../assets/logo-myBrand.svg" />
@@ -20,68 +25,9 @@
 	</header>
 </template>
 
-<script>
-import DropdownLinks from "../DropdownLinks.vue";
-import DropdownUser from "../DropdownUser.vue";
-
-export default {
-	name: "ToggleDiv",
-	components: {
-		DropdownLinks,
-		DropdownUser,
-	},
-};
-</script>
-
 <style lang="scss">
-.header {
-	@include content-spacing;
-	height: max-content;
-	display: flex;
-	justify-content: space-between;
-	max-width: 100%;
-	display: flex;
-	align-items: center;
+.eyewear-header {
 	background: $color-system-1-full;
 	box-shadow: $shadow-box;
-	height: $header-height;
-	z-index: 9999;
-	position: sticky;
-	top: 0;
-}
-
-.logo {
-	max-height: 2.5rem;
-	margin-inline-end: 1rem;
-}
-
-.header-start,
-.header-end {
-	display: flex;
-	align-items: center;
-}
-.header-start {
-	.links {
-		display: flex;
-		flex-direction: row;
-		gap: 0.5rem;
-	}
-	.link {
-		color: $color-system-invert-2-dimmed;
-		font-size: $font-size-1-small;
-		font-weight: 600;
-		transition: color ease-in-out 0.25s;
-		&:hover {
-			color: $color-system-invert-1-full;
-		}
-	}
-}
-.header-end {
-	button {
-		margin-inline-start: 0.5rem;
-	}
-}
-.expand-button {
-	display: none;
 }
 </style>

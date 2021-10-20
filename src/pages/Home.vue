@@ -2,7 +2,7 @@
 	<section>
 		<img src="../assets/pepperi-logo-full.svg" alt="">
 		<h1 class="title-4-lg">Pepperi's Homepage Central</h1>
-        <p>Click the above links to see our designs in action</p>
+        <h2 class="body-lg">Click the links above to see our designs in action</h2>
 	</section>
 </template>
 
@@ -11,7 +11,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
-		padding: 2rem 1rem;
+		padding: 2rem;
+		@include content-spacing;
 		height: 100vh;
 		background-color: #F7F7F7;
 		img {

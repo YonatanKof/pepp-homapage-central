@@ -10,10 +10,12 @@ $screen-xs: 480px;
 	padding-left: 2rem;
 	padding-right: 2rem;
 	@media screen and (max-width: $screen-lg) {
-		padding: 0 1.5rem;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
 	}
 	@media screen and (max-width: $screen-md) {
-		padding: 0 1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;	
 	}
 }
 @mixin content-gap {
@@ -34,6 +36,7 @@ $shadow-box-soft: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04);
 $shadow-box-soft-hover: 0 2px 4px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.08);
 $shadow-box: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.08);
 $shadow-box-hover: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.16);
+$shadow-box-hard: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.24);
 
 //! Colors
 $color-system-1-full: rgb(10, 10, 10);
@@ -59,10 +62,10 @@ $color-link-active: #0f0e69;
 
 //! Interface Size
 :root {
-	--header-height: 64px;
+	--header-height: 4rem;
 }
 $header-height: var(--header-height);
-$border-radius: 4px;
+$border-radius: 0.25em;
 $box-height: 160px;
 $box-height-overlay: 40px;
 
@@ -80,10 +83,48 @@ $font-size-7-Xlarge: 2.5rem;
 $font-size-8-Xlarge: 3rem;
 
 // ! State styles
-@mixin weak-state {
-	background-color: $color-system-4-weak;
+@mixin hover-anim {
+	transition: box-shadow ease-in-out 0.15s, transform ease-in-out 0.35s;
+	&:hover {
+		transform: translateY(-1px);
+	}
+	&:active {
+		transform: unset;
+	}
+}
+@mixin inline($color: $color-system-2-dimmed, $width: 1px, $style: solid) {
+	position: relative;
+	// 👆 Requires parent element to be 'position: relative;'
+	&:after {
+		z-index: 0;
+		content: "";
+		transition: all 0.25s; // same as 'pep-btn' @mixin
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border-radius: inherit;
+		border: $width $style $color;
+	}
+}
+
+@mixin button-spacing {
+	padding: 0.7em 1em;
+}
+
+@mixin state-weak {
+	display: flex;
+	align-items: center;
+	font-size: $font-size-1-small;
 	border-radius: $border-radius;
-	transition: background-color ease-in-out 0.25s, box-shadow ease-in-out 0.125s;
+	height: 2.5rem;
+	padding: 0 1em;
+	align-self: center;
+	background-color: $color-system-4-weak;
+	color: $color-system-1-full;
+	transition: box-shadow ease-in-out 0.15s, background-color ease-in-out 0.35s;
 	&:hover {
 		background-color: $color-system-3-dim;
 	}
@@ -91,8 +132,14 @@ $font-size-8-Xlarge: 3rem;
 	&:focus {
 		box-shadow: $shadow-box-focus;
 	}
+	.start-icon {
+		margin-inline-end: 0.25em;
+	}
+	.end-icon {
+		margin-inline-start: 0.25em;
+	}
 }
-@mixin weak-state-invert {
+@mixin state-weak-invert {
 	background-color: $color-system-invert-3-dim;
 	border-radius: $border-radius;
 	transition: background-color ease-in-out 0.25s, box-shadow ease-in-out 0.125s;
@@ -104,14 +151,17 @@ $font-size-8-Xlarge: 3rem;
 		box-shadow: $shadow-box-focus;
 	}
 }
+
 @mixin state-regular {
+	@include inline;
+	@include hover-anim;
+	font-size: $font-size-1-small;
 	background: white;
 	border-radius: $border-radius;
-	border: 1px solid $color-system-2-dimmed;
 	box-shadow: $shadow-box-soft;
 	transition: all ease-in-out 0.15s;
 	&:hover {
-		border-color: $color-system-1-full;
+		@include inline($color-system-1-full);
 		box-shadow: $shadow-box-soft-hover;
 	}
 	&:active,
@@ -119,6 +169,27 @@ $font-size-8-Xlarge: 3rem;
 		border: 1px solid $color-system-1-full;
 		box-shadow: $shadow-box-focus;
 	}
+}
+@mixin state-strong {
+	@include hover-anim;
+	font-size: $font-size-1-small;
+	color: $color-system-invert-1-full;
+	background: $color-system-1-full;
+	border-radius: $border-radius;
+	box-shadow: $shadow-box;
+	font-weight: 600;
+	// transition: box-shadow ease-in-out 0.15s, transform ease-in-out 0.35s;
+	&:hover {
+		box-shadow: $shadow-box-hover;
+		// transform: translateY(-1px);
+	}
+	&:active,
+	&:focus {
+		box-shadow: $shadow-box-focus;
+	}
+	// &:active {
+	// 	transform: unset;
+	// }
 }
 @mixin clickable-image-base {
 	background-repeat: no-repeat;

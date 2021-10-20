@@ -7,20 +7,7 @@
 .content {
     height: 100%;
     display: grid;
-    grid-template-areas: "carousel" "promo" "portfolio" "footer";
-}
-.carousel{
-    grid-area: carousel;
-}
-
-.promo {
-    grid-area: promo;
-    @include content-spacing;
-}
-.portfolio {
-    grid-area: portfolio;
-}
-
-.footer{
-    grid-area: footer;
+	grid-template-rows: 1fr;
+	min-height: 100vh;
+	min-height: -webkit-fill-available; // mobile viewport hidden footer fix
 }

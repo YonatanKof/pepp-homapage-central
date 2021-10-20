@@ -46,6 +46,10 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 999;
+    right: 0;
+    &:hover {
+        position: absolute;
+    }
     
     hr {
         margin: var(--dd-space-2) auto;
@@ -92,9 +96,6 @@ body {
         background-color: $color-system-1-full;
         color: $color-system-invert-1-full;
     }
-}
-.dropdown-content-end {
-    right: 0;
 }
 
 .dropdown-content-fit {

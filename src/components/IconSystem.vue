@@ -9,7 +9,7 @@
 		:fill="iconColor"
 	>
 		<slot />
-		<rect id="bounding-box" fill="none" width="100%" height="100%"/>
+		<rect id="bounding-box" fill="none" width="100%" height="100%" />
 	</svg>
 </template>
 
@@ -34,9 +34,10 @@ export default {
 
 <style lang="scss" scoped>
 svg {
+	fill-opacity: 0.8;
 	transition: fill 0.35s ease-out;
 	&:hover {
-		fill: palevioletred;
+		fill-opacity: 1;
 	}
 }
 p svg {
