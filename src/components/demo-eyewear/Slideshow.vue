@@ -30,8 +30,8 @@
 <script>
 import SlideControllers from "../SlideControllers.vue";
 import IconSystem from "../IconSystem.vue";
-import ArrowLeftAlt from "../icons/ArrowLeftAlt.vue";
-import ArrowRightAlt from "../icons/ArrowRightAlt.vue";
+import ArrowLeftAlt from "../icons/IconArrowLeftAlt.vue";
+import ArrowRightAlt from "../icons/IconArrowRightAlt.vue";
 
 export default {
 	name: "Slideshow",
