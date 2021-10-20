@@ -17,6 +17,8 @@ import Sidebar from "../components/demo-food/Sidebar.vue";
 				buttonText="Shop Now!"
 				buttonLink="https://wwape.com/"
 				:showButtons="false"
+				:carouselRounded="true"
+				:carouselShadow="true"
 			/>
 			<Sidebar class="food-sidebar" />
 			<div class="food-categories">categories</div>
