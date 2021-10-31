@@ -1,6 +1,6 @@
 <template>
 	<a class="item" :href="cardLinkTo">
-		<div class="image" :style="`background-image: url(` + cardImage + `)`"></div>
+		<div class="image" :style="`background-image: url(` + cardImage + `);`"></div>
 		<div class="card-content">
 			<h3 class="title">{{ cardTitle }}</h3>
 			<h4 class="price">
