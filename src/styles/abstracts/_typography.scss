@@ -1,7 +1,6 @@
 @use "./vars" as *;
 
-$font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Arial, sans-serif;
+$font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 $font-family--title: "Montserrat", Georgia, serif;
 $font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
 
@@ -10,8 +9,8 @@ $font-weight--bold: 600;
 $font-weight--bolder: 900;
 
 * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 // @supports (font-variation-settings: normal) {
@@ -23,28 +22,33 @@ $font-weight--bolder: 900;
 
 html,
 body {
-    color: $color-system-1-full;
-    font-family: $font-family--body;
-    font-weight: $font-weight--normal;
-    font-size: $font-size;
-    line-height: 1.2;
-    cursor: default;
+	--font-size: 16px;
+	color: $color-system-1-full;
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	font-size: var(--font-size);
+	line-height: 1.2;
+	cursor: default;
+	@media screen and (max-width: $screen-md) {
+		--font-size: 14px;
+		color: aqua;
+	}
 }
 
 //  Font weight
 // ------------------------
 strong,
 .bold {
-    font-weight: $font-weight--bold !important;
+	font-weight: $font-weight--bold !important;
 }
 .bolder {
-    font-weight: $font-weight--bolder !important;
+	font-weight: $font-weight--bolder !important;
 }
 .dimmed {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 .smaller {
-    font-size: 80%;
+	font-size: 80%;
 }
 
 h6,
@@ -53,92 +57,98 @@ h4,
 h3,
 h2,
 h1 {
-    font-family: $font-family--title;
-    line-height: 1.15;
+	font-family: $font-family--title;
+	line-height: 1.15;
 }
 p,
-a, 
+a,
 button {
-    font-family: $font-family--body;
+	font-family: $font-family--body;
 }
 p {
-    font-size: $font-size-2-regular;
-    line-height: 1.25;
+	font-size: $font-size-2-regular;
+	line-height: 1.25;
 }
 
 a {
-    text-decoration: none;
-    color: $color-link;
-    cursor: pointer;
-    &.disable,
-    &:disabled {
-        pointer-events: none;
-    }
+	text-decoration: none;
+	color: $color-link;
+	cursor: pointer;
+	&.disable,
+	&:disabled {
+		pointer-events: none;
+	}
 }
 
-.router-link-active{
-  font-weight: 600;
-  text-decoration: underline;
+.router-link-active {
+	font-weight: 600;
+	text-decoration: underline;
 }
 
 .title-1-xs {
-    font-weight: 600;
-    font-size: $font-size-2-regular;
+	font-weight: 600;
+	font-size: $font-size-2-regular;
 }
 .title-2-sm {
-    font-weight: 600;
-    font-size: $font-size-3-big;
+	font-weight: 600;
+	font-size: $font-size-3-big;
 }
 .title-4-lg {
-    font-weight: 700;
-    font-size: $font-size-8-Xlarge;
-    // color: white;
-    line-height: 1.1em;
-    @media screen and (max-width: $screen-lg) {
-        font-size: $font-size-6-Xlarge;
-    }
-    @media screen and (max-width: $screen-sm) {
-        font-size: $font-size-7-Xlarge;
-    }
+	font-weight: 700;
+	font-size: $font-size-8-Xlarge;
+	// color: white;
+	line-height: 1.1em;
+	@media screen and (max-width: $screen-lg) {
+		font-size: $font-size-6-Xlarge;
+	}
+	@media screen and (max-width: $screen-sm) {
+		font-size: $font-size-7-Xlarge;
+	}
 }
 
 .body-2xs {
-    font-size: $font-size-0-smaller;
+	font-size: $font-size-0-smaller;
 }
 .body-xs {
-    font-size: $font-size-1-small;
+	font-size: $font-size-1-small;
 }
 .body-sm {
-    font-size: $font-size-3-big;
+	font-size: $font-size-3-big;
 }
 .body-md {
-    font-size: $font-size-4-bigger;
+	font-size: $font-size-4-bigger;
 }
 .body-lg {
-    font-size: $font-size-5-large;
+	font-size: $font-size-5-large;
 }
 .body-xl {
-    font-size: $font-size-6-Xlarge;
+	font-size: $font-size-6-Xlarge;
 }
 .body-2xl {
-    font-size: $font-size-7-Xlarge;
+	font-size: $font-size-7-Xlarge;
 }
 
-// .title-xs {
-//     font-size: 16px;
-// }
-// .title-sm {
-//     font-size: 20px;
-// }
-// .title-md {
-//     font-size: 24px;
-// }
-// .title-lg {
-//     font-size: 28px;
-// }
-// .title-xl {
-//     font-size: 32px;
-// }
-// .title-2xl {
-//     font-size: 40px;
-// }
+.title-xs {
+	font-size: $font-size-1-small;
+	// font-size: 16px;
+}
+.title-sm {
+	font-size: $font-size-3-big;
+	// font-size: 20px;
+}
+.title-md {
+	font-size: $font-size-4-bigger;
+	// font-size: 24px;
+}
+.title-lg {
+	font-size: $font-size-5-large;
+	// font-size: 28px;
+}
+.title-xl {
+	font-size: $font-size-6-Xlarge;
+	// font-size: 32px;
+}
+.title-2xl {
+	font-size: $font-size-7-Xlarge;
+	// font-size: 40px;
+}
