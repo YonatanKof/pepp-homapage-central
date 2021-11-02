@@ -109,7 +109,6 @@ a {
 .title-4-lg {
 	font-weight: 700;
 	font-size: var(--font-size-08);
-	// color: white;
 	line-height: 1.1em;
 	@media screen and (max-width: $screen-lg) {
 		font-size: var(--font-size-06);
@@ -141,6 +140,16 @@ a {
 	font-size: var(--font-size-07);
 }
 
+.title-xs,
+.title-sm,
+.title-md,
+.title-lg,
+.title-xl,
+.title-2xl {
+	font-weight: $font-weight--bold;
+	color: white;
+	
+}
 .title-xs {
 	font-size: var(--font-size-01);
 }
