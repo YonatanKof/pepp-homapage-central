@@ -4,7 +4,8 @@
 		:onclick="`parent.open('` + cardOnClickTo + `')`"
 		:style="`background-image: url('` + cardImageURL + `');`"
 	>
-		<h3 class="overlay">{{ cardTitle }}</h3>
+		<!-- <h3 class="overlay-i">{{ cardTitle }}</h3> -->
+		<h3 class="title-xs" :class="overlayType">{{ cardTitle }}</h3>
 	</div>
 </template>
 
@@ -15,17 +16,21 @@ export default {
 		cardOnClickTo: { default: "https://wwape.com/", type: String },
 		cardImageURL: { default: "/placeholder-pepp.jpg", type: String },
 		cardTitle: { default: "Nice Title", type: String },
+		overlayType: { default: "overlay-i", type: String },
 	},
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+$title-height: 2.5rem;
 .item {
+	--item-height: 12rem;
 	font-weight: bold;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	aspect-ratio: 4 / 3;
+	// aspect-ratio: 4 / 3;
+	height: var(--item-height);
 	border-radius: $border-radius;
 	box-shadow: $shadow-box;
 	overflow: hidden;
@@ -33,8 +38,14 @@ export default {
 	&:hover {
 		box-shadow: $shadow-box-hover;
 	}
+	@media screen and (max-width: $screen-xl) {
+		--item-height: 10rem;
+	}
+	@media screen and (max-width: $screen-lg) {
+		--item-height: 8rem;
+	}
 }
-.overlay {
+.overlay-i {
 	position: relative;
 	line-height: $box-height-overlay;
 	color: white;
@@ -42,5 +53,14 @@ export default {
 	background: $color-primary;
 	border-radius: 0 0 4px 0;
 	width: max-content;
+}
+.overlay-ii {
+	line-height: $title-height;
+	top: calc(var(--item-height) - #{$title-height});
+	background: white;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	border-radius: 0 0 4px 4px;
 }
 </style>
