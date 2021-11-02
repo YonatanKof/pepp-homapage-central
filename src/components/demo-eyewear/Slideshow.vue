@@ -116,7 +116,7 @@ export default {
 				padding: 0 1rem;
 			}
 			#shop_now {
-				font-size: $font-size-1-small;
+				font-size: var(--font-size-1-small);
 				font-weight: $font-weight--normal;
 				color: $color-system-invert-1-full;
 				padding: 0.4em 0.6em;
@@ -128,15 +128,15 @@ export default {
 			.title {
 				font-family: $font-family--title;
 				font-weight: $font-weight--bold;
-				font-size: $font-size-8-Xlarge;
+				font-size: var(--font-size-8-Xlarge);
 				margin-bottom: 0.5rem;
 			}
 			.subtitle {
-				font-size: $font-size-4-bigger;
+				font-size: var(--font-size-4-bigger);
 				margin-bottom: 1rem;
 			}
 			.desc {
-				font-size: $font-size-3-big;
+				font-size: var(--font-size-3-big);
 				margin-bottom: 1.5rem;
 			}
 		}

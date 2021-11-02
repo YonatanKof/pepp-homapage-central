@@ -1,5 +1,6 @@
 @use "./vars" as *;
 
+
 $font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 $font-family--title: "Montserrat", Georgia, serif;
 $font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
@@ -7,6 +8,20 @@ $font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
 $font-weight--normal: 400;
 $font-weight--bold: 600;
 $font-weight--bolder: 900;
+
+:root {
+	--font-size: 16px;
+	--font-size-0-smaller: calc(var(--font-size) * 0.75);
+	--font-size-1-small: calc(var(--font-size) * 0.875);
+	--font-size-2-regular: var(--font-size);
+	--font-size-3-big: calc(var(--font-size) * 1.125);
+	--font-size-4-bigger: calc(var(--font-size) * 1.25);
+	--font-size-5-large: calc(var(--font-size) * 1.5);
+	--font-size-6-Xlarge: calc(var(--font-size) * 2);
+	--font-size-7-Xlarge: calc(var(--font-size) * 2.5);
+	--font-size-8-Xlarge: calc(var(--font-size) * 3);
+}
+
 
 * {
 	-webkit-font-smoothing: antialiased;
@@ -22,7 +37,6 @@ $font-weight--bolder: 900;
 
 html,
 body {
-	--font-size: 16px;
 	color: $color-system-1-full;
 	font-family: $font-family--body;
 	font-weight: $font-weight--normal;
@@ -66,7 +80,7 @@ button {
 	font-family: $font-family--body;
 }
 p {
-	font-size: $font-size-2-regular;
+	font-size: var(--font-size-2-regular);
 	line-height: 1.25;
 }
 
@@ -87,68 +101,68 @@ a {
 
 .title-1-xs {
 	font-weight: 600;
-	font-size: $font-size-2-regular;
+	font-size: var(--font-size-2-regular);
 }
 .title-2-sm {
 	font-weight: 600;
-	font-size: $font-size-3-big;
+	font-size: var(--font-size-3-big);
 }
 .title-4-lg {
 	font-weight: 700;
-	font-size: $font-size-8-Xlarge;
+	font-size: var(--font-size-8-Xlarge);
 	// color: white;
 	line-height: 1.1em;
 	@media screen and (max-width: $screen-lg) {
-		font-size: $font-size-6-Xlarge;
+		font-size: var(--font-size-6-Xlarge);
 	}
 	@media screen and (max-width: $screen-sm) {
-		font-size: $font-size-7-Xlarge;
+		font-size: var(--font-size-7-Xlarge);
 	}
 }
 
 .body-2xs {
-	font-size: $font-size-0-smaller;
+	font-size: var(--font-size-0-smaller);
 }
 .body-xs {
-	font-size: $font-size-1-small;
+	font-size: var(--font-size-1-small);
 }
 .body-sm {
-	font-size: $font-size-3-big;
+	font-size: var(--font-size-3-big);
 }
 .body-md {
-	font-size: $font-size-4-bigger;
+	font-size: var(--font-size-4-bigger);
 }
 .body-lg {
-	font-size: $font-size-5-large;
+	font-size: var(--font-size-5-large);
 }
 .body-xl {
-	font-size: $font-size-6-Xlarge;
+	font-size: var(--font-size-6-Xlarge);
 }
 .body-2xl {
-	font-size: $font-size-7-Xlarge;
+	font-size: var(--font-size-7-Xlarge);
 }
 
 .title-xs {
-	font-size: $font-size-1-small;
+	font-size: var(--font-size-1-small);
 	// font-size: 16px;
 }
 .title-sm {
-	font-size: $font-size-3-big;
+	font-size: var(--font-size-3-big);
 	// font-size: 20px;
 }
 .title-md {
-	font-size: $font-size-4-bigger;
+	font-size: var(--font-size-4-bigger);
 	// font-size: 24px;
 }
 .title-lg {
-	font-size: $font-size-5-large;
+	font-size: var(--font-size-5-large);
 	// font-size: 28px;
 }
 .title-xl {
-	font-size: $font-size-6-Xlarge;
+	font-size: var(--font-size-6-Xlarge);
 	// font-size: 32px;
 }
 .title-2xl {
-	font-size: $font-size-7-Xlarge;
+	font-size: var(--font-size-7-Xlarge);
 	// font-size: 40px;
 }

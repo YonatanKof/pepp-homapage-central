@@ -60,7 +60,7 @@ import Card from "./PortfolioCard.vue";
 		@media screen and (max-width: $screen-sm) {
 			grid-column: 1 / 3;
 		}
-		font-size: $font-size-6-Xlarge;
+		font-size: var(--font-size-6-Xlarge);
 		text-align: center;
 		text-transform: uppercase;
 		margin-top: 1rem;
@@ -73,7 +73,7 @@ import Card from "./PortfolioCard.vue";
 		background-size: cover;
 	}
 	&__content {
-		font-size: $font-size-4-bigger;
+		font-size: var(--font-size-4-bigger);
 		color: $color-system-1-full;
 		margin-block-start: 1rem;
 	}
@@ -98,7 +98,7 @@ import Card from "./PortfolioCard.vue";
 	&__price-details {
 		display: block;
 		opacity: 0.8;
-		font-size: $font-size-1-small;
+		font-size: var(--font-size-1-small);
 	}
 	&__price-before {
 		text-decoration: line-through;

@@ -25,14 +25,14 @@ export default {
 }
 .title {
 	font-weight: $font-weight--bold;
-	font-size: $font-size-6-Xlarge;
+	font-size: var(--font-size-6-Xlarge);
 	color: $color-system-invert-1-full;
 	text-transform: capitalize;
 	@media screen and (max-width: $screen-md) {
-		font-size: $font-size-5-large;
+		font-size: var(--font-size-5-large);
 	}
 	@media screen and (max-width: $screen-sm) {
-		font-size: $font-size-6-Xlarge;
+		font-size: var(--font-size-6-Xlarge);
 	}
 }
 .content {

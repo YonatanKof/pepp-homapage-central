@@ -69,18 +69,6 @@ $border-radius: 0.25em;
 $box-height: 160px;
 $box-height-overlay: 40px;
 
-//! Text Size
-
-$font-size-0-smaller: calc(var(--font-size) * 0.75);
-$font-size-1-small: calc(var(--font-size) * 0.875);
-$font-size-2-regular: var(--font-size);
-$font-size-3-big: calc(var(--font-size) * 1.125);
-$font-size-4-bigger: calc(var(--font-size) * 1.25);
-$font-size-5-large: calc(var(--font-size) * 1.5);
-$font-size-6-Xlarge: calc(var(--font-size) * 2);
-$font-size-7-Xlarge: calc(var(--font-size) * 2.5);
-$font-size-8-Xlarge: calc(var(--font-size) * 3);
-
 // ! State styles
 @mixin hover-anim {
 	transition: box-shadow ease-in-out 0.15s, transform ease-in-out 0.35s;
@@ -116,7 +104,7 @@ $font-size-8-Xlarge: calc(var(--font-size) * 3);
 @mixin state-weak {
 	display: flex;
 	align-items: center;
-	font-size: $font-size-1-small;
+	font-size: var(--font-size-1-small);
 	border-radius: $border-radius;
 	height: 2.5rem;
 	padding: 0 1em;
@@ -154,7 +142,7 @@ $font-size-8-Xlarge: calc(var(--font-size) * 3);
 @mixin state-regular {
 	@include inline;
 	@include hover-anim;
-	font-size: $font-size-1-small;
+	font-size: var(--font-size-1-small);
 	background: white;
 	border-radius: $border-radius;
 	box-shadow: $shadow-box-soft;
@@ -171,7 +159,7 @@ $font-size-8-Xlarge: calc(var(--font-size) * 3);
 }
 @mixin state-strong {
 	@include hover-anim;
-	font-size: $font-size-1-small;
+	font-size: var(--font-size-1-small);
 	color: $color-system-invert-1-full;
 	background: $color-system-1-full;
 	border-radius: $border-radius;
