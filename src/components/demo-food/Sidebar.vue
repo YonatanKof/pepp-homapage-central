@@ -86,7 +86,12 @@ import Option from "./Option.vue";
 	color: $color-primary;
 	border-radius: 4px;
 	padding: 14px 16px;
-
+	align-items: center;
+	div{
+		display: flex;
+		gap: 0.125rem;
+		flex-direction: column;
+	}
 	.bigger {
 		opacity: 1;
 		font-weight: 600;

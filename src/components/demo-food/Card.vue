@@ -1,10 +1,9 @@
 <template>
 	<div
-		class="item"
+		class="card-item"
 		:onclick="`parent.open('` + cardOnClickTo + `')`"
 		:style="`background-image: url('` + cardImageURL + `');`"
 	>
-		<!-- <h3 class="overlay-i">{{ cardTitle }}</h3> -->
 		<h3 class="title-xs" :class="overlayType">{{ cardTitle }}</h3>
 	</div>
 </template>
@@ -23,13 +22,12 @@ export default {
 
 <style lang="scss">
 $title-height: 2.5rem;
-.item {
+.card-item {
 	--item-height: 12rem;
 	font-weight: bold;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	// aspect-ratio: 4 / 3;
 	height: var(--item-height);
 	border-radius: $border-radius;
 	box-shadow: $shadow-box;
@@ -44,23 +42,23 @@ $title-height: 2.5rem;
 	@media screen and (max-width: $screen-lg) {
 		--item-height: 8rem;
 	}
-}
-.overlay-i {
-	position: relative;
-	line-height: $box-height-overlay;
-	color: white;
-	padding: 0 16px;
-	background: $color-primary;
-	border-radius: 0 0 4px 0;
-	width: max-content;
-}
-.overlay-ii {
-	line-height: $title-height;
-	top: calc(var(--item-height) - #{$title-height});
-	background: white;
-	position: relative;
-	width: 100%;
-	text-align: center;
-	border-radius: 0 0 4px 4px;
+	.overlay-i {
+		position: relative;
+		line-height: $box-height-overlay;
+		color: white;
+		padding: 0 16px;
+		background: $color-primary;
+		border-radius: 0 0 4px 0;
+		width: max-content;
+	}
+	.overlay-ii {
+		line-height: $title-height;
+		top: calc(var(--item-height) - #{$title-height});
+		background: white;
+		position: relative;
+		width: 100%;
+		text-align: center;
+		border-radius: 0 0 4px 4px;
+	}
 }
 </style>
