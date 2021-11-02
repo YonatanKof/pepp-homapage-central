@@ -123,10 +123,15 @@ import Option from "./Option.vue";
 	border-radius: 1em;
 	padding: 0.25em 0.7em;
 	top: -0.75em;
-	right: -.75em;
+	right: -0.75em;
 	box-shadow: $shadow-box-soft;
 }
 
+// @media screen and (max-width: $screen-lg) {
+// 	#sidebar {
+// 		$font-size: 10px;
+// 	}
+// }
 @media screen and (max-width: $screen-md) {
 	.sidebar-menu {
 		background: white;
