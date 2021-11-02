@@ -8,10 +8,13 @@
 
 <style lang="scss">
 .main-links {
+	--main-links-height: 3rem;
+	height: var(--main-links-height);
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	gap: 1em;
-	padding: 1rem;
+	padding: 0 1rem;
 	@include content-spacing;
 	background-color: #5D8009;
 	a{

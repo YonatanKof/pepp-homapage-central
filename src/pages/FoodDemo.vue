@@ -8,8 +8,8 @@ import Categories from "../components/demo-food/Categories.vue";
 <template>
 	<div>
 		<Header />
-		<main class="wrapper content">
-			<section class="food-grid">
+		<main class="main-food">
+			<section class="wrapper food-grid">
 				<Slideshow
 					class="food-carousel"
 					slidesHeight="24rem"
@@ -31,6 +31,10 @@ import Categories from "../components/demo-food/Categories.vue";
 
 <style lang="scss">
 $food-bg-color: rgb(248, 248, 248);
+.main-food {
+	height: calc(100vh - (var(--main-links-height) + var(--header-height)));
+	background-color: $food-bg-color;
+}
 .food-grid {
 	display: grid;
 	grid-template-areas: "food_carousel food_sidebar" "food_categories food_sidebar";
@@ -39,7 +43,9 @@ $food-bg-color: rgb(248, 248, 248);
 	grid-column-gap: 1.5rem;
 	padding: 1.5rem;
 	max-width: 92rem;
-	background-color: $food-bg-color;
+	@media screen and (max-width: $screen-lg) {
+		grid-template-columns: 1fr 12rem;
+	}
 }
 .food-carousel {
 	grid-area: food_carousel;
