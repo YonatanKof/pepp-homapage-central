@@ -90,7 +90,7 @@ import Option from "./Option.vue";
 	.bigger {
 		opacity: 1;
 		font-weight: 600;
-		font-size: 18px;
+		font-size: var(--font-size-03);
 	}
 	img {
 		color: black;
@@ -127,11 +127,6 @@ import Option from "./Option.vue";
 	box-shadow: $shadow-box-soft;
 }
 
-// @media screen and (max-width: $screen-lg) {
-// 	#sidebar {
-// 		$font-size: 10px;
-// 	}
-// }
 @media screen and (max-width: $screen-md) {
 	.sidebar-menu {
 		background: white;
@@ -161,7 +156,7 @@ import Option from "./Option.vue";
 		position: relative;
 		z-index: 500;
 		button {
-			font-size: 14px;
+			font-size: var(--font-size-01);
 			font-weight: 600;
 			background: rgb(250, 250, 250);
 			border-radius: 4px;

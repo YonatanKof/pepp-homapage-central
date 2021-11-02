@@ -22,7 +22,7 @@ body {
     position: relative;
     cursor: pointer;
     p {
-        font-size: var(--font-size-1-small);
+        font-size: var(--font-size-01);
     }
     svg {
         fill-opacity: 0.5;
@@ -38,7 +38,7 @@ body {
 .dropdown-content-end {
     @include state-regular;
     font-family: $font-family--body;
-    font-size: var(--font-size-1-small);
+    font-size: var(--font-size-01);
     position: absolute;
     min-width: max-content;
     top: calc(100% + var(--dd-space-1));
@@ -61,10 +61,10 @@ body {
     }
     p {
         padding: var(--dd-space-2);
-        font-size: var(--font-size-1-small);
+        font-size: var(--font-size-01);
     }
     li {
-        font-size: var(--font-size-1-small);
+        font-size: var(--font-size-01);
         line-height: 1.5rem;
         background-color: white;
         border-radius: $border-radius;

@@ -104,7 +104,7 @@ $box-height-overlay: 40px;
 @mixin state-weak {
 	display: flex;
 	align-items: center;
-	font-size: var(--font-size-1-small);
+	font-size: var(--font-size-01);
 	border-radius: $border-radius;
 	height: 2.5rem;
 	padding: 0 1em;
@@ -142,7 +142,7 @@ $box-height-overlay: 40px;
 @mixin state-regular {
 	@include inline;
 	@include hover-anim;
-	font-size: var(--font-size-1-small);
+	font-size: var(--font-size-01);
 	background: white;
 	border-radius: $border-radius;
 	box-shadow: $shadow-box-soft;
@@ -159,7 +159,7 @@ $box-height-overlay: 40px;
 }
 @mixin state-strong {
 	@include hover-anim;
-	font-size: var(--font-size-1-small);
+	font-size: var(--font-size-01);
 	color: $color-system-invert-1-full;
 	background: $color-system-1-full;
 	border-radius: $border-radius;

@@ -50,7 +50,7 @@ img, .logo {
 	color: #fff;
 	display: flex;
 	margin-right: 32px;
-	font-size: 20px;
+	font-size: var(--font-size-04);
 }
 
 #header-section .btn-group ul {
@@ -85,7 +85,7 @@ img, .logo {
 	border: 1px solid rgb(26, 26, 26);
 	border-radius: 4px;
 	font-weight: 500;
-	font-size: 14px;
+	font-size: var(--font-size-02);
 	color: rgb(80, 80, 80);
 	line-height: 5px;
 }
@@ -93,7 +93,7 @@ img, .logo {
 .btn-group ul li a {
 	color: white;
 	font-family: "Inter", sans-serif;
-	font-size: 14px;
+	font-size: var(--font-size-02);
 	height: 20px;
 	letter-spacing: 0.12px;
 	line-height: 20px;
@@ -109,7 +109,7 @@ img, .logo {
 	color: #ffffff;
 	text-decoration: none;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: var(--font-size-05);
 }
 
 #header-section .container-fluid {
@@ -170,7 +170,7 @@ img, .logo {
 	text-decoration: none;
 	cursor: pointer;
 	display: block;
-	font-size: 10px;
+	font-size: var(--font-size-00);
 }
 
 #header-section .dropdown a:hover {
@@ -210,7 +210,7 @@ img, .logo {
 .dropdown-content-user {
 	display: none;
 	position: absolute;
-	font-size: 14px;
+	font-size: var(--font-size-02);
 	vertical-align: middle;
 	min-width: 200px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -222,7 +222,7 @@ img, .logo {
 
 .dropdown-content {
 	display: none;
-	font-size: 14px;
+	font-size: var(--font-size-02);
 	vertical-align: middle;
 	position: absolute;
 	background-color: white;
@@ -249,7 +249,7 @@ img, .logo {
 	cursor: pointer;
 
 	color: rgb(26, 26, 26);
-	font-size: 14px;
+	font-size: var(--font-size-02);
 	font-weight: normal;
 	letter-spacing: 0.12px;
 	line-height: 13px;
@@ -272,7 +272,7 @@ img, .logo {
 	width: 131px;
 	height: 18px;
 	color: rgba(26, 26, 26, 0.7);
-	font-size: 14px;
+	font-size: var(--font-size-02);
 	font-weight: normal;
 	letter-spacing: 0.12px;
 	line-height: 9px;
@@ -328,7 +328,7 @@ img, .logo {
 	.dropdown-content-user {
 		display: none;
 		position: absolute;
-		font-size: 14px;
+		font-size: var(--font-size-02);
 		vertical-align: middle;
 		min-width: 200px;
 		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -345,7 +345,7 @@ img, .logo {
 		border: 1px solid rgb(26, 26, 26);
 		border-radius: 4px;
 		font-weight: 500;
-		font-size: 14px;
+		font-size: var(--font-size-02);
 		color: rgb(80, 80, 80);
 		line-height: 5px;
 	}
@@ -361,11 +361,11 @@ img, .logo {
 		color: #fff;
 		display: flex;
 		margin-right: 0px;
-		font-size: 20px;
+		font-size: var(--font-size-05);
 	}
 	#header-section .dropdown-menu-left {
 		margin-top: 14px;
-		font-size: 25px;
+		font-size: var(--font-size-06);
 		width: 100vw;
 		background-color: rgb(41, 41, 41);
 		border: none;
@@ -379,7 +379,7 @@ img, .logo {
 		height: 40px;
 		min-width: 150px;
 		color: rgb(26, 26, 26);
-		font-size: 14px;
+		font-size: var(--font-size-02);
 		letter-spacing: 0.12px;
 		line-height: 20px;
 	}
@@ -393,7 +393,7 @@ img, .logo {
 
 	#header-section .dropdown-menu-left li a {
 		color: black;
-		font-size: 14px;
+		font-size: var(--font-size-02);
 	}
 
 	.showMobile {

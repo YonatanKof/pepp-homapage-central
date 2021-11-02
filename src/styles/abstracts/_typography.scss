@@ -10,16 +10,16 @@ $font-weight--bold: 600;
 $font-weight--bolder: 900;
 
 :root {
-	--font-size: 16px;
-	--font-size-0-smaller: calc(var(--font-size) * 0.75);
-	--font-size-1-small: calc(var(--font-size) * 0.875);
-	--font-size-2-regular: var(--font-size);
-	--font-size-3-big: calc(var(--font-size) * 1.125);
-	--font-size-4-bigger: calc(var(--font-size) * 1.25);
-	--font-size-5-large: calc(var(--font-size) * 1.5);
-	--font-size-6-Xlarge: calc(var(--font-size) * 2);
-	--font-size-7-Xlarge: calc(var(--font-size) * 2.5);
-	--font-size-8-Xlarge: calc(var(--font-size) * 3);
+	--base-font-size: 16px;
+	--font-size-00: calc(var(--base-font-size) * 0.75);
+	--font-size-01: calc(var(--base-font-size) * 0.875);
+	--font-size-02: var(--base-font-size);
+	--font-size-03: calc(var(--base-font-size) * 1.125);
+	--font-size-04: calc(var(--base-font-size) * 1.25);
+	--font-size-05: calc(var(--base-font-size) * 1.5);
+	--font-size-06: calc(var(--base-font-size) * 2);
+	--font-size-07: calc(var(--base-font-size) * 2.5);
+	--font-size-08: calc(var(--base-font-size) * 3);
 }
 
 
@@ -40,11 +40,10 @@ body {
 	color: $color-system-1-full;
 	font-family: $font-family--body;
 	font-weight: $font-weight--normal;
-	font-size: var(--font-size);
 	line-height: 1.2;
 	cursor: default;
 	@media screen and (max-width: $screen-md) {
-		--font-size: 14px;
+		--base-font-size: 14px;
 		color: aqua;
 	}
 }
@@ -80,7 +79,7 @@ button {
 	font-family: $font-family--body;
 }
 p {
-	font-size: var(--font-size-2-regular);
+	font-size: var(--font-size-02);
 	line-height: 1.25;
 }
 
@@ -101,68 +100,62 @@ a {
 
 .title-1-xs {
 	font-weight: 600;
-	font-size: var(--font-size-2-regular);
+	font-size: var(--font-size-02);
 }
 .title-2-sm {
 	font-weight: 600;
-	font-size: var(--font-size-3-big);
+	font-size: var(--font-size-03);
 }
 .title-4-lg {
 	font-weight: 700;
-	font-size: var(--font-size-8-Xlarge);
+	font-size: var(--font-size-08);
 	// color: white;
 	line-height: 1.1em;
 	@media screen and (max-width: $screen-lg) {
-		font-size: var(--font-size-6-Xlarge);
+		font-size: var(--font-size-06);
 	}
 	@media screen and (max-width: $screen-sm) {
-		font-size: var(--font-size-7-Xlarge);
+		font-size: var(--font-size-07);
 	}
 }
 
 .body-2xs {
-	font-size: var(--font-size-0-smaller);
+	font-size: var(--font-size-00);
 }
 .body-xs {
-	font-size: var(--font-size-1-small);
+	font-size: var(--font-size-01);
 }
 .body-sm {
-	font-size: var(--font-size-3-big);
+	font-size: var(--font-size-03);
 }
 .body-md {
-	font-size: var(--font-size-4-bigger);
+	font-size: var(--font-size-04);
 }
 .body-lg {
-	font-size: var(--font-size-5-large);
+	font-size: var(--font-size-05);
 }
 .body-xl {
-	font-size: var(--font-size-6-Xlarge);
+	font-size: var(--font-size-06);
 }
 .body-2xl {
-	font-size: var(--font-size-7-Xlarge);
+	font-size: var(--font-size-07);
 }
 
 .title-xs {
-	font-size: var(--font-size-1-small);
-	// font-size: 16px;
+	font-size: var(--font-size-01);
 }
 .title-sm {
-	font-size: var(--font-size-3-big);
-	// font-size: 20px;
+	font-size: var(--font-size-03);
 }
 .title-md {
-	font-size: var(--font-size-4-bigger);
-	// font-size: 24px;
+	font-size: var(--font-size-04);
 }
 .title-lg {
-	font-size: var(--font-size-5-large);
-	// font-size: 28px;
+	font-size: var(--font-size-05);
 }
 .title-xl {
-	font-size: var(--font-size-6-Xlarge);
-	// font-size: 32px;
+	font-size: var(--font-size-06);
 }
 .title-2xl {
-	font-size: var(--font-size-7-Xlarge);
-	// font-size: 40px;
+	font-size: var(--font-size-07);
 }

@@ -38,7 +38,7 @@ export default {
 	@media screen and (max-width: $screen-sm) {
 		grid-column: 1 / 3;
 	}
-	font-size: var(--font-size-6-Xlarge);
+	font-size: var(--font-size-06);
 	text-align: center;
 	text-transform: uppercase;
 	margin-top: 1rem;
@@ -51,7 +51,7 @@ export default {
 	background-size: cover;
 }
 .card-content {
-	font-size: var(--font-size-4-bigger);
+	font-size: var(--font-size-04);
 	color: $color-system-1-full;
 	margin-block-start: 1rem;
 }
@@ -76,7 +76,7 @@ export default {
 .price-details {
 	display: block;
 	opacity: 0.8;
-	font-size: var(--font-size-1-small);
+	font-size: var(--font-size-01);
 }
 .price-before {
 	text-decoration: line-through;
