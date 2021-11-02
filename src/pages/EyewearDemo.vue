@@ -9,25 +9,32 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 <template>
 	<div>
 		<Header />
-		<main class="wrapper content eyewear-grid">
-			<Slideshow
-				class="eyewear-carousel"
-				imageURL="eyewear-hero-1.jpg"
-				slideTitle="Infinite looks"
-				slideSubTitle="Amazing Sunglasses At just <strong>$99</strong>"
-				buttonText="Shop Now!"
-				buttonLink="https://wwape.com/"
-			/>
-			<Promos />
-			<Portfolio />
-			<Footer />
+		<main class="main-eyewear">
+			<section class="wrapper eyewear-grid">
+				<Slideshow
+					class="eyewear-carousel"
+					slidesHeight="32rem"
+					imageURL="eyewear-hero-1.jpg"
+					slideTitle="Infinite looks"
+					slideSubTitle="Amazing Sunglasses At just <strong>$99</strong>"
+					buttonText="Shop Now!"
+					buttonLink="https://wwape.com/"
+				/>
+				<Promos />
+				<Portfolio />
+				<Footer />
+			</section>
 		</main>
 	</div>
 </template>
 
 <style lang="scss">
+.main-eyewear {
+	height: calc(100vh - (var(--main-links-height) + var(--header-height)));
+}
 .eyewear-grid {
 	grid-template-areas: "eyewear_carousel" "eyewear_promo" "eyewear_portfolio" "eyewear_footer";
+	grid-template-rows: auto;
 }
 .eyewear-carousel {
 	grid-area: eyewear_carousel;

@@ -44,7 +44,7 @@ export default {
 	props: {
 		slidesHeight: {
 			type: String,
-			default: "32rem",
+			default: "100%",
 		},
 		imageURL: { type: String },
 		slideTitle: { type: String },

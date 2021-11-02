@@ -12,7 +12,6 @@ import Categories from "../components/demo-food/Categories.vue";
 			<section class="wrapper food-grid">
 				<Slideshow
 					class="food-carousel"
-					slidesHeight="24rem"
 					imageURL="/food-hero-1.jpg"
 					slideTitle="Special Sweet Sale"
 					slideSubTitle="4 Macaron box by BAKELUV for <strong>$20</strong>"
@@ -41,10 +40,14 @@ $food-bg-color: rgb(248, 248, 248);
 	grid-template-rows: 26rem 1fr;
 	grid-template-columns: 1fr 13.5rem;
 	grid-column-gap: 1.5rem;
-	padding: 1.5rem;
 	max-width: 92rem;
+	gap: 1.5rem;
+	padding: 1.5rem;
 	@media screen and (max-width: $screen-lg) {
+		grid-template-areas: "food_carousel food_sidebar" "food_categories food_categories";
+		grid-template-rows: auto 1fr;
 		grid-template-columns: 1fr 12rem;
+		background-color: violet;
 	}
 }
 .food-carousel {
