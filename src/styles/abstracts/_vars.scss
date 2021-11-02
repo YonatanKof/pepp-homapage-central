@@ -15,7 +15,7 @@ $screen-xs: 480px;
 	}
 	@media screen and (max-width: $screen-md) {
 		padding-left: 1rem;
-		padding-right: 1rem;	
+		padding-right: 1rem;
 	}
 }
 @mixin content-gap {
@@ -70,17 +70,16 @@ $box-height: 160px;
 $box-height-overlay: 40px;
 
 //! Text Size
-$font-size: 16px;
 
-$font-size-0-smaller: 0.75rem;
-$font-size-1-small: 0.875rem;
-$font-size-2-regular: 1rem;
-$font-size-3-big: 1.125rem;
-$font-size-4-bigger: 1.25rem;
-$font-size-5-large: 1.5rem;
-$font-size-6-Xlarge: 2rem;
-$font-size-7-Xlarge: 2.5rem;
-$font-size-8-Xlarge: 3rem;
+$font-size-0-smaller: calc(var(--font-size) * 0.75);
+$font-size-1-small: calc(var(--font-size) * 0.875);
+$font-size-2-regular: var(--font-size);
+$font-size-3-big: calc(var(--font-size) * 1.125);
+$font-size-4-bigger: calc(var(--font-size) * 1.25);
+$font-size-5-large: calc(var(--font-size) * 1.5);
+$font-size-6-Xlarge: calc(var(--font-size) * 2);
+$font-size-7-Xlarge: calc(var(--font-size) * 2.5);
+$font-size-8-Xlarge: calc(var(--font-size) * 3);
 
 // ! State styles
 @mixin hover-anim {
