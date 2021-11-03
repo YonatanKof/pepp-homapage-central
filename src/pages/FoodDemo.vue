@@ -20,6 +20,7 @@ import Categories from "../components/demo-food/Categories.vue";
 					:showButtons="false"
 					:carouselRounded="true"
 					:carouselShadow="true"
+					:controllersIsInside="true"
 				/>
 				<Sidebar class="food-sidebar" />
 				<Categories class="food-categories" />
@@ -30,6 +31,7 @@ import Categories from "../components/demo-food/Categories.vue";
 
 <style lang="scss">
 $food-bg-color: rgb(248, 248, 248);
+$food-grid-gap: 1.5rem;
 .main-food {
 	height: calc(100vh - (var(--main-links-height) + var(--header-height)));
 	background-color: $food-bg-color;
@@ -41,7 +43,7 @@ $food-bg-color: rgb(248, 248, 248);
 	grid-template-columns: 1fr 13.5rem;
 	grid-column-gap: 1.5rem;
 	max-width: 92rem;
-	gap: 1.5rem;
+	gap: $food-grid-gap;
 	padding: 1.5rem;
 	@media screen and (max-width: $screen-lg) {
 		grid-template-areas: "food_carousel food_sidebar" "food_categories food_categories";
@@ -52,6 +54,7 @@ $food-bg-color: rgb(248, 248, 248);
 }
 .food-carousel {
 	grid-area: food_carousel;
+	height: calc(100% + $food-grid-gap);
 }
 .food-sidebar {
 	grid-area: food_sidebar;

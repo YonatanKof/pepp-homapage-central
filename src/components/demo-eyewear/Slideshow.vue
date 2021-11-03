@@ -1,9 +1,19 @@
 <template>
-	<section id="carousel" class="carousel">
-		<div id="slides" class="slides" :class="{ 'carousel-rounded': carouselRounded, 'carousel-shadow': carouselShadow  }" :style="`height:` + slidesHeight + `;`">
+	<section id="carousel" class="carousel" :class="{ carouselFlex: controllersIsInside }">
+		<div
+			id="slides"
+			class="slides"
+			:class="{ 'carousel-rounded': carouselRounded, 'carousel-shadow': carouselShadow }"
+			:style="`height:` + slidesHeight + `;`"
+		>
 			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `); display: block;`">
 				<div class="gard-overlay">
-					<button v-if="showButtons" id="prev-btn" class="button-weak-semi-invert button-icon hidden-on-mobile" onclick="minusSlide()">
+					<button
+						v-if="showButtons"
+						id="prev-btn"
+						class="button-weak-semi-invert button-icon hidden-on-mobile"
+						onclick="minusSlide()"
+					>
 						<IconSystem>
 							<ArrowLeftAlt />
 						</IconSystem>
@@ -15,7 +25,12 @@
 							{{ buttonText }}
 						</button>
 					</div>
-					<button v-if="showButtons" id="next-btn" class="button-weak-semi-invert button-icon hidden-on-mobile" onclick="plusSlide()">
+					<button
+						v-if="showButtons"
+						id="next-btn"
+						class="button-weak-semi-invert button-icon hidden-on-mobile"
+						onclick="plusSlide()"
+					>
 						<IconSystem>
 							<ArrowRightAlt />
 						</IconSystem>
@@ -54,18 +69,21 @@ export default {
 		showButtons: { type: Boolean, default: true },
 		carouselRounded: { type: Boolean, default: false },
 		carouselShadow: { type: Boolean, default: false },
+		controllersIsInside: { type: Boolean, default: true },
 	},
 };
 </script>
 
 <style lang="scss">
+.carouselFlex {
+	display: flex;
+	flex-direction: column;
+}
 .carousel {
 	width: 100%;
 	cursor: pointer;
 	position: relative;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
 }
 .carousel-rounded {
 	border-radius: $border-radius;
@@ -154,10 +172,17 @@ export default {
 .slide[data-state="active"] {
 	display: block;
 }
-#prev-btn{
+#prev-btn {
 	margin-inline-start: 1.5rem;
 }
-#next-btn{
+#next-btn {
 	margin-inline-end: 1.5rem;
 }
+// .absolutBottom {
+// 	position: absolute;
+// 	bottom: 0;
+// 	right: 0;
+// 	left: 0;
+// 	margin-inline: auto;
+// }
 </style>
