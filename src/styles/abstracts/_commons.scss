@@ -58,15 +58,14 @@ button {
 		fill: $color-system-1-full;
 	}
 }
+.button-weak-semi-invert {
+	@include state-weak-invert;
+}
+
 .button-weak-invert {
-	@include state-weak;
+	@include state-weak-invert;
 	svg {
 		fill: $color-system-invert-1-full;
-	}
-	background: $color-system-invert-4-weak;
-	color: $color-system-invert-1-full;
-	&:hover {
-		background: $color-system-invert-3-dim;
 	}
 }
 .button-regular {
