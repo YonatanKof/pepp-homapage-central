@@ -45,9 +45,8 @@ $title-height: 2.5rem;
 	.overlay-i {
 		position: relative;
 		line-height: $box-height-overlay;
-		color: white;
 		padding: 0 16px;
-		background: $color-primary;
+		background-color: $color-primary;
 		border-radius: 0 0 4px 0;
 		width: max-content;
 	}
@@ -59,6 +58,7 @@ $title-height: 2.5rem;
 		width: 100%;
 		text-align: center;
 		border-radius: 0 0 4px 4px;
+		color: $color-system-1-full;
 	}
 }
 </style>
