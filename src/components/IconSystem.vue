@@ -26,7 +26,7 @@ export default {
 		},
 		iconColor: {
 			type: String,
-			default: "red",
+			default: "$color-system-2-dimmed",
 		},
 	},
 };
@@ -34,7 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 svg {
-	fill-opacity: 0.8;
+	fill-opacity: 0.75;
 	transition: fill 0.35s ease-out;
 	&:hover {
 		fill-opacity: 1;
