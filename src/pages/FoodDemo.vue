@@ -49,7 +49,7 @@ $food-grid-gap: 1.5rem;
 		grid-template-areas: "food_carousel food_sidebar" "food_categories food_categories";
 		grid-template-rows: auto 1fr;
 		grid-template-columns: 1fr 12rem;
-		background-color: violet;
+// background-color: violet;
 	}
 }
 .food-carousel {

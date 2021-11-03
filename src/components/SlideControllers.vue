@@ -41,7 +41,7 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0.25rem 0;
+	margin: 0.5rem 0;
 	cursor: default;
 	gap: 0.5rem;
 	.pause {
