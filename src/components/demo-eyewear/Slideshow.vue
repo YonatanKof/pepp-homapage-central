@@ -3,7 +3,7 @@
 		<div id="slides" class="slides" :class="{ 'carousel-rounded': carouselRounded, 'carousel-shadow': carouselShadow  }" :style="`height:` + slidesHeight + `;`">
 			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `); display: block;`">
 				<div class="gard-overlay">
-					<button v-if="showButtons" id="prev-btn" class="button-weak-invert button-icon hidden-on-mobile" onclick="minusSlide()">
+					<button v-if="showButtons" id="prev-btn" class="button-weak-semi-invert button-icon hidden-on-mobile" onclick="minusSlide()">
 						<IconSystem>
 							<ArrowLeftAlt />
 						</IconSystem>
@@ -15,7 +15,7 @@
 							{{ buttonText }}
 						</button>
 					</div>
-					<button v-if="showButtons" id="next-btn" class="button-weak-invert button-icon hidden-on-mobile" onclick="plusSlide()">
+					<button v-if="showButtons" id="next-btn" class="button-weak-semi-invert button-icon hidden-on-mobile" onclick="plusSlide()">
 						<IconSystem>
 							<ArrowRightAlt />
 						</IconSystem>

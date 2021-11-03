@@ -14,9 +14,26 @@
 				<span class="radio-dot"></span>
 			</div>
 		</div>
-		<button onclick="customHomepage.playerClick();" class="pause button-weak" id="player"></button>
+		<button
+			onclick="customHomepage.playerClick();"
+			class="button-weak-semi-invert button-icon hidden-on-mobile"
+			id="player"
+		>
+			<IconSystem>
+				<Pause />
+			</IconSystem>
+		</button>
 	</div>
 </template>
+
+<script>
+import IconSystem from "./IconSystem.vue";
+import Pause from "./icons/IconPause.vue";
+export default {
+	name: "SlideControllers",
+	components: { IconSystem, Pause },
+};
+</script>
 
 <style lang="scss">
 .slide-controllers {
@@ -26,34 +43,18 @@
 	align-items: center;
 	margin: 0.25rem 0;
 	cursor: default;
-	button {
-		margin-inline-start: 0.5rem;
-		background-color: transparent;
-		height: 2rem;
-		width: 2rem;
-		background-position: center;
-		background-size: 2rem;
-		background-repeat: no-repeat;
-		margin: 0;
-		border-radius: $border-radius;
-		transition: background-color ease-in-out 0.25s;
-		&:hover {
-			background-color: $color-system-4-weak;
-		}
-	}
+	gap: 0.5rem;
 	.pause {
-		background-image: url("https://storage.pepperi.com/PreSales/NewFoodDemoImg/pause.svg");
 	}
 	.play {
-		background-image: url("https://storage.pepperi.com/PreSales/NewFoodDemoImg/play.svg");
 	}
 }
 
 .indicators {
+	@include state-weak-invert;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	height: 3rem;
 	padding: 0 1rem;
 	position: relative;
 	&:active {
