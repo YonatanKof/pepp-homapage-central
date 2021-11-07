@@ -43,7 +43,7 @@ $food-grid-gap: 1.5rem;
 	grid-template-rows: auto 1fr;
 	grid-template-columns: 1fr 13.5rem;
 	grid-column-gap: 1.5rem;
-	max-width: 92rem;
+	max-width: $screen-2xl;
 	gap: $food-grid-gap;
 	padding: 1.5rem;
 	@media screen and (max-width: $screen-lg) {
@@ -54,8 +54,6 @@ $food-grid-gap: 1.5rem;
 }
 .food-carousel {
 	grid-area: food_carousel;
-	// height: calc(100% + $food-grid-gap);
-
 }
 .food-sidebar {
 	grid-area: food_sidebar;
