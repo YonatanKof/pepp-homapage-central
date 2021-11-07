@@ -44,7 +44,7 @@ body {
 	cursor: default;
 	@media screen and (max-width: $screen-md) {
 		--base-font-size: 14px;
-		color: aqua;
+		// color: aqua;
 	}
 }
 
@@ -167,4 +167,7 @@ a {
 }
 .title-2xl {
 	font-size: var(--font-size-07);
+}
+.title-3xl {
+	font-size: var(--font-size-08);
 }

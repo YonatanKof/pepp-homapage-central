@@ -16,7 +16,7 @@
 		</div>
 		<button
 			onclick="customHomepage.playerClick();"
-			class="button-weak-semi-invert button-icon hidden-on-mobile"
+			class="button-weak-semi-invert button-icon"
 			id="player"
 		>
 			<IconSystem>
