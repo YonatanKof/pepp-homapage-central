@@ -4,7 +4,7 @@
 		:onclick="`parent.open('` + cardOnClickTo + `')`"
 		:style="`background-image: url('` + cardImageURL + `');`"
 	>
-		<h3 class="title-xs" :class="overlayType">{{ cardTitle }}</h3>
+		<h3 class="title-sm" :class="overlayType">{{ cardTitle }}</h3>
 	</div>
 </template>
 
