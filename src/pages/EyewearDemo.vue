@@ -19,6 +19,7 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 					slideSubTitle="Amazing Sunglasses At just <strong>$99</strong>"
 					buttonText="Shop Now!"
 					buttonLink="https://wwape.com/"
+					:controllersIsInside="false"
 				/>
 				<Promos />
 				<Portfolio />
@@ -36,7 +37,6 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 	display: grid;
 	grid-template-areas: "eyewear_carousel" "eyewear_promo" "eyewear_portfolio" "eyewear_footer";
 	grid-template-rows: auto;
-	row-gap: 2rem;
 }
 .eyewear-carousel {
 	grid-area: eyewear_carousel;
@@ -44,6 +44,7 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 .promo {
 	grid-area: eyewear_promo;
 	@include content-spacing;
+	padding-block-end: 2rem;
 }
 .portfolio {
 	grid-area: eyewear_portfolio;
