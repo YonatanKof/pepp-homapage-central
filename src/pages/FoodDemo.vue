@@ -17,10 +17,11 @@ import Categories from "../components/demo-food/Categories.vue";
 					slideSubTitle="4 Macaron box by BAKELUV for <strong>$20</strong>"
 					buttonText="Shop Now!"
 					buttonLink="https://wwape.com/"
+					slidesHeight="24rem"
 					:showButtons="false"
 					:carouselRounded="true"
 					:carouselShadow="true"
-					:controllersIsInside="true"
+					
 				/>
 				<Sidebar class="food-sidebar" />
 				<Categories class="food-categories" />
@@ -39,7 +40,7 @@ $food-grid-gap: 1.5rem;
 .food-grid {
 	display: grid;
 	grid-template-areas: "food_carousel food_sidebar" "food_categories food_sidebar";
-	grid-template-rows: 26rem 1fr;
+	grid-template-rows: auto 1fr;
 	grid-template-columns: 1fr 13.5rem;
 	grid-column-gap: 1.5rem;
 	max-width: 92rem;
@@ -49,12 +50,12 @@ $food-grid-gap: 1.5rem;
 		grid-template-areas: "food_carousel food_sidebar" "food_categories food_categories";
 		grid-template-rows: auto 1fr;
 		grid-template-columns: 1fr 12rem;
-// background-color: violet;
 	}
 }
 .food-carousel {
 	grid-area: food_carousel;
-	height: calc(100% + $food-grid-gap);
+	// height: calc(100% + $food-grid-gap);
+
 }
 .food-sidebar {
 	grid-area: food_sidebar;

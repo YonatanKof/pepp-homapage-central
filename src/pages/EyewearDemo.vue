@@ -33,8 +33,10 @@ import Footer from "../components/demo-eyewear/Footer.vue";
 	height: calc(100vh - (var(--main-links-height) + var(--header-height)));
 }
 .eyewear-grid {
+	display: grid;
 	grid-template-areas: "eyewear_carousel" "eyewear_promo" "eyewear_portfolio" "eyewear_footer";
 	grid-template-rows: auto;
+	row-gap: 2rem;
 }
 .eyewear-carousel {
 	grid-area: eyewear_carousel;

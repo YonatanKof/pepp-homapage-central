@@ -1,12 +1,15 @@
 <template>
-	<section id="carousel" class="carousel" :class="{ carouselFlex: controllersIsInside }">
+	<section id="carousel" class="carousel">
 		<div
 			id="slides"
 			class="slides"
-			:class="{ 'carousel-rounded': carouselRounded, 'carousel-shadow': carouselShadow }"
+			:class="{
+				'carousel-rounded': carouselRounded,
+				'carousel-shadow': carouselShadow,
+			}"
 			:style="`height:` + slidesHeight + `;`"
 		>
-			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `); display: block;`">
+			<div class="slide" data-state="active" :style="`background-image: url(` + imageURL + `)`">
 				<div class="gard-overlay">
 					<button
 						v-if="showButtons"
@@ -38,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<SlideControllers />
+		<SlideControllers :class="{ 'position-absolute-down': controllersIsInside }" />
 	</section>
 </template>
 
@@ -75,9 +78,11 @@ export default {
 </script>
 
 <style lang="scss">
-.carouselFlex {
-	display: flex;
-	flex-direction: column;
+.position-absolute-down {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 .carousel {
 	width: 100%;
@@ -170,7 +175,7 @@ export default {
 }
 
 .slide[data-state="active"] {
-	display: block;
+	// display: block;
 }
 #prev-btn {
 	margin-inline-start: 1.5rem;
