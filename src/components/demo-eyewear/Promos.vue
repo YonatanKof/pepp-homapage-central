@@ -28,7 +28,7 @@ import Card from "./PromoCard.vue";
 	@media screen and (max-width: $screen-sm) {
 		grid-template-columns: 1fr;
 	}
-	margin-bottom: 1rem;
+	// margin-bottom: 1rem;
 	@include content-gap;
 }
 </style>

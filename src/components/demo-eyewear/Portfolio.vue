@@ -51,7 +51,13 @@ import Card from "./PortfolioCard.vue";
 		grid-template-columns: repeat(2, 1fr);
 	}
 	@include content-spacing;
-	@include content-gap;
+	column-gap: 2rem;
+	@media screen and (max-width: $screen-lg) {
+		column-gap: 1.5rem;
+	}
+	@media screen and (max-width: $screen-md) {
+		column-gap: 1rem;
+	}
 	&__item {
 		text-align: center;
 	}
@@ -63,7 +69,7 @@ import Card from "./PortfolioCard.vue";
 		font-size: var(--font-size-06);
 		text-align: center;
 		text-transform: uppercase;
-		margin-top: 1rem;
+		margin-bottom: 1.5rem;
 	}
 	&__image {
 		height: 12rem;
