@@ -1,8 +1,7 @@
 <template>
 	<aside id="sidebar">
 		<div id="response-menu" class="response-menu">
-			<!-- <button onclick="customHomepage.openCloseMenu();" class="button-regular" id="btn">Open My Lists</button> -->
-			<button @click="showSidebar = !showSidebar" class="button-regular" id="btn">Open My Lists</button>
+			<button @click="showSidebar = !showSidebar" class="button-regular" id="btn">My Lists</button>
 		</div>
 		<div id="sidebar-sm" :class="compClasses" class="sidebar-sm sidebar-menu">
 			<div class="baselist">
@@ -40,22 +39,16 @@
 			<button class="button-strong" onclick="customHomepage.createNewReplenishment()">Replenishment</button>
 
 			<hr />
-
-			<div class="card">
-				<div>
-					<p>Credit line</p>
-					<p id="credit-line" class="bigger">$2,102</p>
-				</div>
-				<img src="https://storage.pepperi.com/PreSales/NewFoodDemoImg/credit.svg" />
-			</div>
-
-			<div class="card" onclick="customHomepage.createNewActivityAging()">
-				<div>
-					<p>Open Invoices</p>
-					<p id="balance-line" class="bigger">$-2,102</p>
-				</div>
-				<img src="https://storage.pepperi.com/PreSales/NewFoodDemoImg/invoice.svg" />
-			</div>
+			<InfoCard
+				InfoCardKey="Credit line"
+				InfoCardValue="$2,102"
+				InfoCardImage="https://storage.pepperi.com/PreSales/NewFoodDemoImg/credit.svg"
+			/>
+			<InfoCard
+				InfoCardKey="Open Invoices"
+				InfoCardValue="$-429"
+				InfoCardImage="https://storage.pepperi.com/PreSales/NewFoodDemoImg/invoice.svg"
+			/>
 			<div id="overSide"></div>
 		</div>
 	</aside>
@@ -63,10 +56,12 @@
 
 <script>
 import Option from "./Option.vue";
+import InfoCard from "../InfoCard.vue";
 
 export default {
 	components: {
 		Option,
+		InfoCard,
 	},
 	data() {
 		return {
@@ -82,6 +77,7 @@ export default {
 	},
 };
 </script>
+
 <style lang="scss">
 .sidebar-menu {
 	display: flex;
@@ -97,37 +93,6 @@ export default {
 	display: none;
 }
 
-.card {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	background-color: rgba(0, 0, 0, 0.06);
-	color: $color-primary;
-	border-radius: $border-radius;
-	padding: 1rem;
-	align-items: center;
-	div {
-		display: flex;
-		gap: 0.125rem;
-		flex-direction: column;
-	}
-	.bigger {
-		opacity: 1;
-		font-weight: 600;
-		font-size: var(--font-size-03);
-	}
-	img {
-		color: black;
-		padding-top: 4px;
-		padding-right: 0px;
-		padding-bottom: 4px;
-		width: 48px;
-		opacity: 85%;
-	}
-	#balance-line {
-		color: rgb(230, 38, 0);
-	}
-}
 .baselist {
 	display: flex;
 	flex-direction: column;
@@ -164,7 +129,7 @@ export default {
 
 	.sidebar-sm {
 		display: none;
-		padding: 0 48px 64px 48px;
+		padding: 0 1.5rem 2rem 1.5rem;
 		height: max-content;
 		box-shadow: $shadow-box;
 		position: relative;
@@ -180,39 +145,27 @@ export default {
 		position: relative;
 		z-index: 500;
 		button {
-			min-width: 50%;
+			width: 100%;
+			max-width: 24rem;
 			margin: 0.75rem;
 		}
 	}
 	.baselist {
-		padding-top: 24px;
+		padding-top: 1.5rem;
 		margin-top: 0px;
 	}
 
-	.balance {
-		margin-bottom: 48px;
-	}
-
 	#overSide {
-		position: absolute;
-		background-color: rgba(0, 0, 0, 0.5);
-		width: 100vw;
-		height: 100vh;
 		display: block;
-		left: 0;
+		position: fixed;
+		inset: 0px;
+		top: calc(var(--main-links-height) + var(--header-height));
+		background-color: $color-system-2-dimmed;
 		z-index: -100;
 	}
-	#add {
-		width: 32px;
-		height: 32px;
-	}
 }
-@media screen and (max-width: $screen-sm) {
-	#sidebar-sm {
-		padding: 0 32px 48px 32px;
-	}
-}
-.showSidebar{
+
+.showSidebar {
 	display: flex;
 }
 </style>
