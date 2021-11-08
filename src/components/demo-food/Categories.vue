@@ -72,6 +72,12 @@ export default {
 		grid-template-areas: "boxes-categories" "boxes-promotions";
 		grid-template-columns: 1fr;
 	}
+	@media screen and (max-width: $screen-sm) {
+		padding: 1.25rem;
+	}
+	@media screen and (max-width: $screen-xs) {
+		padding: 1rem;
+	}
 }
 
 .boxes-promotions {

@@ -46,7 +46,7 @@ $food-grid-gap: 1.5rem;
 	max-width: $screen-2xl;
 	gap: $food-grid-gap;
 	padding: 1.5rem;
-	@media screen and (max-width: $screen-lg) {
+	@media screen and (max-width: $screen-xl) {
 		grid-template-areas: "food_carousel food_sidebar" "food_categories food_categories";
 		grid-template-rows: auto 1fr;
 		grid-template-columns: 1fr 12rem;
@@ -56,10 +56,7 @@ $food-grid-gap: 1.5rem;
 		grid-template-rows: 26rem 1fr;
 		grid-template-columns: 1fr;
 		padding: 0;
-		background-color: aquamarine;
-	}
-	@media screen and (max-width: $screen-sm) {
-		gap: 1rem;
+		gap: 0;
 	}
 }
 .food-carousel {
