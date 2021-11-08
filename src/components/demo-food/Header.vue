@@ -8,7 +8,7 @@ import DropdownUser from "../DropdownUser.vue";
 		<div class="wrapper header max-w">
 			<div class="header-start">
 				<router-link class="logo" to="/food-demo">
-					<img src="FoodDemo/Foodies.svg" />
+					<img src="Foodies.svg" />
 				</router-link>
 			</div>
 			<div class="header-end">
