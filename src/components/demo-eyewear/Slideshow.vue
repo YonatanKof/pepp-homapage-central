@@ -135,6 +135,9 @@ export default {
 			color: white;
 			padding: 0 2rem;
 			@media screen and (max-width: $screen-md) {
+				padding: 0 1.5rem;
+			}
+			@media screen and (max-width: $screen-xs) {
 				padding: 0 1rem;
 			}
 			#shop_now {
