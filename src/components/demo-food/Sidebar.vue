@@ -1,7 +1,7 @@
 <template>
 	<aside id="sidebar">
 		<div id="response-menu" class="response-menu">
-			<button @click="showSidebar = !showSidebar" class="button-regular" id="btn">My Lists</button>
+			<button @click="showSidebar = !showSidebar" class="button-regular title-lg color-system" id="btn">My Lists</button>
 		</div>
 		<div id="sidebar-sm" :class="compClasses" class="sidebar-sm sidebar-menu">
 			<div class="baselist">

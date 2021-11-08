@@ -36,11 +36,8 @@ $title-height: 2.5rem;
 	&:hover {
 		box-shadow: $shadow-box-hover;
 	}
-	@media screen and (max-width: $screen-xl) {
-		--item-height: 10rem;
-	}
 	@media screen and (max-width: $screen-lg) {
-		--item-height: 8rem;
+		--item-height: 10rem;
 	}
 	.overlay-i {
 		position: relative;
