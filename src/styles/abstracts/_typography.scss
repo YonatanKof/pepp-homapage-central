@@ -1,6 +1,5 @@
 @use "./vars" as *;
 
-
 $font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 $font-family--title: "Montserrat", Georgia, serif;
 $font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
@@ -21,7 +20,6 @@ $font-weight--bolder: 900;
 	--font-size-07: calc(var(--base-font-size) * 2.5);
 	--font-size-08: calc(var(--base-font-size) * 3);
 }
-
 
 * {
 	-webkit-font-smoothing: antialiased;
@@ -71,7 +69,7 @@ h3,
 h2,
 h1 {
 	font-family: $font-family--title;
-	line-height: 1.15;
+	line-height: 1.05;
 }
 p,
 a,
@@ -118,6 +116,16 @@ a {
 	}
 }
 
+.body-2xs,
+.body-xs,
+.body-sm,
+.body-md,
+.body-lg,
+.body-xl,
+.body-2xl,
+.body-3xl {
+	font-family: $font-family--body;
+}
 .body-2xs {
 	font-size: var(--font-size-00);
 }
@@ -139,6 +147,9 @@ a {
 .body-2xl {
 	font-size: var(--font-size-07);
 }
+.body-3xl {
+	font-size: var(--font-size-08);
+}
 
 .title-xs,
 .title-sm,
@@ -147,8 +158,8 @@ a {
 .title-xl,
 .title-2xl {
 	font-weight: $font-weight--bold;
+	font-family: $font-family--title;
 	color: white;
-	
 }
 .title-xs {
 	font-size: var(--font-size-01);
@@ -170,4 +181,16 @@ a {
 }
 .title-3xl {
 	font-size: var(--font-size-08);
+}
+
+//! Weights
+
+.f-weight-normal {
+	font-weight: $font-weight--normal;
+}
+.f-weight-bold {
+	font-weight: $font-weight--bold;
+}
+.f-weight-bolder {
+	font-weight: $font-weight--bolder;
 }
