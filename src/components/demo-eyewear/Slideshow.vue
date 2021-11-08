@@ -24,7 +24,7 @@
 					<div class="slide-text">
 						<h1 class="title">{{ slideTitle }}</h1>
 						<p class="subtitle" v-html="slideSubTitle"></p>
-						<button :onclick="`parent.open('` + buttonLink + `')`" class="button-strong-invert body-md bolder">
+						<button :onclick="`parent.open('` + buttonLink + `')`" class="button-strong-invert body-md bolder" style="font-size: 1.1em;">
 							{{ buttonText }}
 						</button>
 					</div>
@@ -123,12 +123,11 @@ export default {
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		@include linear-gradient(90deg, black, 0.6, 80%);
-		// @include content-spacing;
+		@include linear-gradient(90deg, black, 0.8, 100%);
 		@media screen and (max-width: $screen-md) {
 			align-items: flex-end;
 			padding-bottom: 1.5rem;
-			@include linear-gradient(45deg, black, 0.6, 80%);
+			@include linear-gradient(45deg, black, 1, 80%);
 		}
 		.slide-text {
 			width: 100%;
