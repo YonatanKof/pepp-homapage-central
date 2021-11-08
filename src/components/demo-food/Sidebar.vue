@@ -1,12 +1,10 @@
-<script setup>
-import Option from "./Option.vue";
-</script>
 <template>
 	<aside id="sidebar">
 		<div id="response-menu" class="response-menu">
-			<button onclick="customHomepage.openCloseMenu();" class="dropbtn" id="btn">Open menu</button>
+			<!-- <button onclick="customHomepage.openCloseMenu();" class="button-regular" id="btn">Open My Lists</button> -->
+			<button @click="showSidebar = !showSidebar" class="button-regular" id="btn">Open My Lists</button>
 		</div>
-		<div id="sidebar-sm" class="sidebar-menu">
+		<div id="sidebar-sm" :class="compClasses" class="sidebar-sm sidebar-menu">
 			<div class="baselist">
 				<h3 class="title-2-sm">My Lists</h3>
 				<hr />
@@ -63,6 +61,27 @@ import Option from "./Option.vue";
 	</aside>
 </template>
 
+<script>
+import Option from "./Option.vue";
+
+export default {
+	components: {
+		Option,
+	},
+	data() {
+		return {
+			showSidebar: false,
+		};
+	},
+	computed: {
+		compClasses: function () {
+			return {
+				showSidebar: this.showSidebar,
+			};
+		},
+	},
+};
+</script>
 <style lang="scss">
 .sidebar-menu {
 	display: flex;
@@ -84,10 +103,10 @@ import Option from "./Option.vue";
 	justify-content: space-between;
 	background-color: rgba(0, 0, 0, 0.06);
 	color: $color-primary;
-	border-radius: 4px;
-	padding: 14px 16px;
+	border-radius: $border-radius;
+	padding: 1rem;
 	align-items: center;
-	div{
+	div {
 		display: flex;
 		gap: 0.125rem;
 		flex-direction: column;
@@ -134,7 +153,7 @@ import Option from "./Option.vue";
 
 @media screen and (max-width: $screen-md) {
 	.sidebar-menu {
-		background: white;
+		background: $color-system-invert-1-full;
 	}
 	#sidebar {
 		position: absolute;
@@ -143,7 +162,7 @@ import Option from "./Option.vue";
 		height: 100%;
 	}
 
-	#sidebar-sm {
+	.sidebar-sm {
 		display: none;
 		padding: 0 48px 64px 48px;
 		height: max-content;
@@ -155,22 +174,14 @@ import Option from "./Option.vue";
 		justify-content: center;
 		box-sizing: border-box;
 		width: 100%;
-		height: 64px;
-		background-color: white;
+		height: 4rem;
+		background-color: $color-system-invert-1-full;
 		box-shadow: $shadow-box;
 		position: relative;
 		z-index: 500;
 		button {
-			font-size: var(--font-size-01);
-			font-weight: 600;
-			background: rgb(250, 250, 250);
-			border-radius: 4px;
-			border: 1px solid rgb(153, 153, 153);
-			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
-			height: 40px;
-			color: #000;
-			padding: 7px 80px;
-			margin-top: 12px;
+			min-width: 50%;
+			margin: 0.75rem;
 		}
 	}
 	.baselist {
@@ -200,5 +211,8 @@ import Option from "./Option.vue";
 	#sidebar-sm {
 		padding: 0 32px 48px 32px;
 	}
+}
+.showSidebar{
+	display: flex;
 }
 </style>

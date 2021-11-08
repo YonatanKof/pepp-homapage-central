@@ -17,11 +17,11 @@ import Categories from "../components/demo-food/Categories.vue";
 					slideSubTitle="4 Macaron box by BAKELUV for <strong>$20</strong>"
 					buttonText="Shop Now!"
 					buttonLink="https://wwape.com/"
-					slidesHeight="24rem"
 					:showButtons="false"
 					:carouselRounded="true"
 					:carouselShadow="true"
-					
+					:controllersIsInside="true"
+					:makeRed="false"
 				/>
 				<Sidebar class="food-sidebar" />
 				<Categories class="food-categories" />
@@ -40,7 +40,7 @@ $food-grid-gap: 1.5rem;
 .food-grid {
 	display: grid;
 	grid-template-areas: "food_carousel food_sidebar" "food_categories food_sidebar";
-	grid-template-rows: auto 1fr;
+	grid-template-rows: 24rem 1fr;
 	grid-template-columns: 1fr 13.5rem;
 	grid-column-gap: 1.5rem;
 	max-width: $screen-2xl;
@@ -51,6 +51,16 @@ $food-grid-gap: 1.5rem;
 		grid-template-rows: auto 1fr;
 		grid-template-columns: 1fr 12rem;
 	}
+	@media screen and (max-width: $screen-md) {
+		grid-template-areas: "food_carousel" "food_categories";
+		grid-template-rows: 26rem 1fr;
+		grid-template-columns: 1fr;
+		padding: 0;
+		background-color: aquamarine;
+	}
+	@media screen and (max-width: $screen-sm) {
+		gap: 1rem;
+	}
 }
 .food-carousel {
 	grid-area: food_carousel;
@@ -60,5 +70,10 @@ $food-grid-gap: 1.5rem;
 }
 .food-categories {
 	grid-area: food_categories;
+}
+.carousel-rounded {
+	@media screen and (max-width: $screen-md) {
+		border-radius: 0;
+	}
 }
 </style>
