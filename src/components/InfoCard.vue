@@ -27,16 +27,12 @@ export default {
 	align-items: center;
 	&__body {
 		display: flex;
-		gap: 0.125rem;
+		gap: 0.25rem;
 		flex-direction: column;
 	}
 	&__image {
-		color: black;
-		padding-top: 4px;
-		padding-right: 0px;
-		padding-bottom: 4px;
-		width: 48px;
-		opacity: 85%;
+		color: $color-system-invert-2-dimmed;
+		width: 3rem;
 	}
 	#balance-line {
 		color: rgb(230, 38, 0);
