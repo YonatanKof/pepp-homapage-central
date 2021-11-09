@@ -90,10 +90,28 @@ button {
 .button-icon {
 	padding: 0 0.5rem;
 }
+.button-just-icon {
+	padding: 0.25rem;
+}
 
 .color-system {
 	color: $color-system-1-full;
 }
 .color-system-invert {
 	color: $color-system-invert-1-full;
+}
+
+//! Button size
+
+[title~="button-2xs"] {
+	font-size: 0.5em;
+}
+[title~="button-xs"] {
+	font-size: 1em;
+}
+[title~="button-sm"] {
+	font-size: 0.8em;
+}
+[title~="button-md"] {
+	font-size: 1em;
 }

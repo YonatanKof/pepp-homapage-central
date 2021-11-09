@@ -39,26 +39,28 @@ $shadow-box-hover: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.12),
 $shadow-box-hard: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.16), 0 8px 16px rgba(0, 0, 0, 0.24);
 
 //! Colors
-$color-system-1-full: rgb(10, 10, 10);
-$color-system-2-dimmed: rgba(10, 10, 10, 0.7);
-$color-system-3-dim: rgba(10, 10, 10, 0.25);
-$color-system-4-weak: rgba(10, 10, 10, 0.08);
+:root {
+	--color-system-values: 0, 0%, 4%;
+	--color-system: hsl(var(--color-system-values));
 
-$color-system-invert-1-full: rgb(256, 256, 256);
-$color-system-invert-2-dimmed: rgba(256, 256, 256, 0.4);
-$color-system-invert-3-dim: rgba(256, 256, 256, 0.2);
-$color-system-invert-4-weak: rgba(256, 256, 256, 0.08);
+	--color-system-invert-values: 0, 0%, 100%;
+	--color-system-invert: hsl(var(--color-system-invert-values));
+}
+$color-system-1-full: var(--color-system);
+$color-system-2-dimmed: hsla(var(--color-system-values), 0.8);
+$color-system-3-dim: hsla(var(--color-system-values), 0.25);
+$color-system-4-weak: hsla(var(--color-system-values), 0.08);
+
+$color-system-invert-1-full: var(--color-system-invert);
+$color-system-invert-2-dimmed: hsla(var(--color-system-invert-values), 0.8);
+$color-system-invert-3-dim: hsla(var(--color-system-invert-values), 0.25);
+$color-system-invert-4-weak: hsla(var(--color-system-invert-values), 0.08);
 
 $color-primary: #1a1a1a;
 $color-success: green;
 $color-caution: red;
 $color-link: #1766a6;
 $color-link-active: #0f0e69;
-
-//! Grad
-@mixin linear-gradient($deg, $clr, $int, $end) {
-	background: linear-gradient($deg, rgba($clr, $int) 0%, rgba($clr, 0) $end);
-}
 
 //! Interface Size
 :root {
@@ -68,6 +70,11 @@ $header-height: var(--header-height);
 $border-radius: 0.25em;
 $box-height: 160px;
 $box-height-overlay: 40px;
+
+//! Grad
+@mixin linear-gradient($deg, $clr, $int, $end) {
+	background: linear-gradient($deg, rgba($clr, $int) 0%, rgba($clr, 0) $end);
+}
 
 // ! State styles
 @mixin hover-anim {
@@ -104,14 +111,15 @@ $box-height-overlay: 40px;
 @mixin state-weak {
 	display: flex;
 	align-items: center;
-	font-size: var(--font-size-01);
 	border-radius: $border-radius;
-	height: 2.5rem;
-	padding: 0 1em;
+	padding: 0.5em 1em;
 	align-self: center;
 	background-color: $color-system-4-weak;
 	color: $color-system-1-full;
 	transition: box-shadow ease-in-out 0.15s, background-color ease-in-out 0.35s;
+	svg {
+		font-size: 100%;
+	}
 	&:hover {
 		background-color: $color-system-3-dim;
 	}
@@ -156,7 +164,8 @@ $box-height-overlay: 40px;
 	@include hover-anim;
 	font-size: var(--font-size-01);
 	color: $color-system-invert-1-full;
-	background: $color-system-1-full;
+	// background-color: hsl(var(--color-system-values));
+	background-color: var(--color-system);
 	border-radius: $border-radius;
 	box-shadow: $shadow-box;
 	font-weight: 600;
