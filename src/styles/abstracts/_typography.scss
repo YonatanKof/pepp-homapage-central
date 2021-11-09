@@ -4,9 +4,10 @@ $font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Sego
 $font-family--title: "Montserrat", Georgia, serif;
 $font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
 
+$font-weight--light: 200;
 $font-weight--normal: 400;
 $font-weight--bold: 600;
-$font-weight--bolder: 900;
+$font-weight--bolder: 800;
 
 :root {
 	--base-font-size: 16px;
@@ -88,28 +89,8 @@ a {
 }
 
 .router-link-active {
-	font-weight: 600;
+	font-weight: $font-weight--bold;
 	text-decoration: underline;
-}
-
-.title-1-xs {
-	font-weight: 600;
-	font-size: var(--font-size-02);
-}
-.title-2-sm {
-	font-weight: 600;
-	font-size: var(--font-size-03);
-}
-.title-4-lg {
-	font-weight: 700;
-	font-size: var(--font-size-08);
-	line-height: 1.1em;
-	@media screen and (max-width: $screen-lg) {
-		font-size: var(--font-size-06);
-	}
-	@media screen and (max-width: $screen-sm) {
-		font-size: var(--font-size-07);
-	}
 }
 
 .body-2xs,
@@ -152,7 +133,8 @@ a {
 .title-md,
 .title-lg,
 .title-xl,
-.title-2xl {
+.title-2xl,
+.title-3xl {
 	font-weight: $font-weight--bold;
 	font-family: $font-family--title;
 	color: white;
@@ -181,6 +163,9 @@ a {
 
 //! Weights
 
+.f-weight-light {
+	font-weight: $font-weight--light;
+}
 .f-weight-normal {
 	font-weight: $font-weight--normal;
 }
