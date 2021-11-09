@@ -1,5 +1,5 @@
 <template>
-	<button class="button-weak-invert button-icon">
+	<button class="button-weak-invert button-just-icon">
 		<IconSystem>
 			<slot />
 		</IconSystem>

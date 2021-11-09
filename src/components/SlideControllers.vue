@@ -16,7 +16,7 @@
 		</div>
 		<button
 			onclick="customHomepage.playerClick();"
-			class="button-weak-semi-invert button-icon"
+			class="button-weak-semi-invert button-just-icon"
 			id="player"
 		>
 			<IconSystem>
@@ -55,7 +55,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	padding: 0 1rem;
+	padding: 0.5rem 0.75rem;
 	position: relative;
 	&:active {
 		box-shadow: none;

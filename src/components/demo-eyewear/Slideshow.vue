@@ -14,7 +14,7 @@
 					<button
 						v-if="showButtons"
 						id="prev-btn"
-						class="button-weak-semi-invert button-icon hidden-on-mobile"
+						class="button-weak-semi-invert button-just-icon hidden-on-mobile"
 						onclick="minusSlide()"
 					>
 						<IconSystem>
@@ -31,7 +31,7 @@
 					<button
 						v-if="showButtons"
 						id="next-btn"
-						class="button-weak-semi-invert button-icon hidden-on-mobile"
+						class="button-weak-semi-invert button-just-icon hidden-on-mobile"
 						onclick="plusSlide()"
 					>
 						<IconSystem>

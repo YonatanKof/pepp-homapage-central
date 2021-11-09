@@ -42,7 +42,6 @@ body {
 	cursor: default;
 	@media screen and (max-width: $screen-md) {
 		--base-font-size: 14px;
-		// color: aqua;
 	}
 }
 
@@ -75,12 +74,9 @@ p,
 a,
 button {
 	font-family: $font-family--body;
-}
-p {
 	font-size: var(--font-size-02);
-	line-height: 1.25;
+	line-height: 1;
 }
-
 a {
 	text-decoration: none;
 	color: $color-link;

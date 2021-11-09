@@ -26,7 +26,7 @@ export default {
 		},
 		iconColor: {
 			type: String,
-			default: "$color-system-2-dimmed",
+			default: "var(--color-system-full)",
 		},
 	},
 };
@@ -34,7 +34,8 @@ export default {
 
 <style lang="scss" scoped>
 svg {
-	fill-opacity: 0.75;
+	font-size: var(--base-font-size);
+	fill-opacity: 0.85;
 	transition: fill 0.35s ease-out;
 	&:hover {
 		fill-opacity: 1;
