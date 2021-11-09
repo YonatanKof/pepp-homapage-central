@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<img src="../assets/pepperi-logo-full.svg" alt="">
-		<h1 class="title-4-lg">Pepperi's Homepage Central</h1>
+		<h1 class="title-3xl color-system">Pepperi's Homepage Central</h1>
         <h2 class="body-lg">Click the links above to see our designs in action</h2>
 	</section>
 </template>

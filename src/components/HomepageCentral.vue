@@ -1,8 +1,8 @@
 <template>
-	<div class="main-links body-2xs">
-		<router-link to="/">Home</router-link>
-		<router-link to="/eyewear-demo">Eyewear Demo</router-link>
-		<router-link to="/food-demo">Food Demo</router-link>
+	<div class="main-links">
+		<router-link class="body-xs" to="/">Home</router-link>
+		<router-link class="body-xs" to="/eyewear-demo">Eyewear Demo</router-link>
+		<router-link class="body-xs" to="/food-demo">Food Demo</router-link>
 	</div>
 </template>
 
