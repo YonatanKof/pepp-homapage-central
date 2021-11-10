@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import IconSystem from "./IconSystem.vue";
+import IconSystem from "./BaseIconSystem.vue";
 import Pause from "./icons/IconPause.vue";
 export default {
 	name: "SlideControllers",

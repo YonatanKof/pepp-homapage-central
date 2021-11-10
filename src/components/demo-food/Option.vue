@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IconSystem from "../IconSystem.vue";
+import IconSystem from "../BaseIconSystem.vue";
 import PlusIcon from "../icons/IconPlus.vue";
 export default {
 	name: "Option",

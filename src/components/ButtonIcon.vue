@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import IconSystem from "./IconSystem.vue";
+import IconSystem from "./BaseIconSystem.vue";
 import IconMenu from "./icons/IconMenu.vue"
 export default {
 	name: "Button",

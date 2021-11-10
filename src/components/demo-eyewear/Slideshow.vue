@@ -47,7 +47,7 @@
 
 <script>
 import SlideControllers from "../SlideControllers.vue";
-import IconSystem from "../IconSystem.vue";
+import IconSystem from "../BaseIconSystem.vue";
 import ArrowLeftAlt from "../icons/IconArrowLeftAlt.vue";
 import ArrowRightAlt from "../icons/IconArrowRightAlt.vue";
 
