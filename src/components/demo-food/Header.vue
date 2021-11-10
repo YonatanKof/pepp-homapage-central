@@ -23,6 +23,9 @@ $food-color-main: rgb(48, 37, 29);
 .food-header {
 	background-color: $food-color-main;
 	box-shadow: $shadow-box-hard;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 	.max-w {
 		max-width: $screen-2xl;
 	}
