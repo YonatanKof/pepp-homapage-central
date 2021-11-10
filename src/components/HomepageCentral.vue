@@ -12,6 +12,7 @@
 }
 .main-links {
 	height: var(--main-links-height);
+	z-index: 10000;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
