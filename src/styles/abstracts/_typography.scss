@@ -3,6 +3,7 @@
 $font-family--body: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 $font-family--title: "Montserrat", Georgia, serif;
 $font-family--code: "Source Code Pro", Consolas, Monaco, "Andale Mono";
+$font-family--hand: "Permanent Marker", Brush Script MT;
 
 $font-weight--light: 200;
 $font-weight--normal: 400;
@@ -184,4 +185,14 @@ a {
 }
 .f-weight-bolder {
 	font-weight: $font-weight--bolder;
+}
+
+//!
+
+.f-family-hand {
+	font-family: $font-family--hand;
+}
+
+.text-center {
+	text-align: center;
 }
