@@ -49,7 +49,7 @@ section {
 		left: 1.5rem;
 		rotate: -2deg;
 		background-color: var(--color-primary-super-light);
-		box-shadow: 0.1em 0.2em 0 var(--color-primary-main);
+		box-shadow: 0.2em 0.2em 0 var(--color-primary-extra-dark);
 		padding: 0 0.5em 0.25em;
 	}
 	.nice-content {

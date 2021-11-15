@@ -5,7 +5,7 @@
 		</div>
 		<div id="sidebar-sm" :class="compClasses" class="sidebar-sm sidebar-menu">
 			<div class="baselist">
-				<h3 class="title-sm">My Lists</h3>
+				<h3 class="title-sm color-system">My Lists</h3>
 				<hr />
 				<div id="food_list" style="display: block">
 					<div id="popup" style="display: none">
