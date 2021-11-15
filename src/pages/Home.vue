@@ -71,90 +71,99 @@ section {
 	inset: 0px;
 	background-color: $color-system-4-weak;
 }
-
+@keyframes leaf-anim {
+	from {
+		translate: 0% 0%;
+	}
+	to {
+		translate: 6% 3%;
+	}
+}
 .leaf {
 	position: absolute;
 	inset: unset;
 	transition: inset ease-out 4s, transform ease-out 2s;
+	animation: leaf-anim 8000ms cubic-bezier(0.35, 0, 0.75, 1) alternate infinite;
 }
 .leaf-full {
 	right: -1rem;
 	bottom: -18rem;
-	transform: rotateZ(-35deg) scale(1);
+	transform: rotateZ(-35deg) scale(0.8);
 	@media screen and (max-width: $screen-lg) {
 		right: -2rem;
 		bottom: -19rem;
-		transform: rotateZ(-30deg) scale(0.9);
+		transform: rotateZ(-30deg) scale(0.7);
 	}
 	@media screen and (max-width: $screen-md) {
-		right: -3rem;
+		right: -5rem;
 		bottom: -20rem;
-		transform: rotateZ(-25deg) scale(0.8);
+		transform: rotateZ(-25deg) scale(0.6);
 	}
 	@media screen and (max-width: $screen-sm) {
-		right: -4rem;
-		bottom: -21rem;
-		transform: rotateZ(-20deg) scale(0.7);
+		right: -9rem;
+		bottom: -23rem;
+		transform: rotateZ(-20deg) scale(0.5);
 	}
 }
 .leaf-round {
 	left: -6rem;
 	top: -2rem;
-	transform: rotateZ(-25deg) scale(1.3);
+	transform: rotateZ(-25deg) scale(1) skew(5deg, 5deg);
 	animation-delay: 2s;
 	@media screen and (max-width: $screen-lg) {
 		left: -7rem;
 		top: -2.5rem;
-		transform: rotateZ(-20deg) scale(1.2);
+		transform: rotateZ(-20deg) scale(.9) skew(2deg, 2deg);
 	}
 	@media screen and (max-width: $screen-md) {
 		left: -8rem;
 		top: -3rem;
-		transform: rotateZ(-15deg) scale(1);
+		transform: rotateZ(-15deg) scale(.8) skew(5deg, 5deg);
 	}
 	@media screen and (max-width: $screen-sm) {
-		top: -3.5rem;
-		left: -9rem;
-		transform: rotateZ(-10deg) scale(0.8);
+		top: -7rem;
+		left: -13rem;
+		transform: rotateZ(-10deg) scale(0.6) skew(1deg, 1deg);
 	}
 }
 .leaf-skiny {
 	left: -6rem;
-	bottom: -8rem;
-	transform: rotateZ(45deg) scale(1.2);
+	bottom: -10rem;
+	transform: rotateZ(45deg) scale(.9);
 	animation-delay: 4s;
 	@media screen and (max-width: $screen-lg) {
-		left: -9rem;
-		transform: rotateZ(40deg) scale(1.1);
+		left: -11rem;
+		transform: rotateZ(40deg) scale(.8);
 	}
 	@media screen and (max-width: $screen-md) {
-		left: -10rem;
-		transform: rotateZ(35deg) scale(1);
+		left: -12rem;
+		transform: rotateZ(35deg) scale(0.75);
 	}
 	@media screen and (max-width: $screen-sm) {
 		left: -11rem;
-		transform: rotateZ(30deg) scale(0.9);
+		bottom: -16rem;
+		transform: rotateZ(30deg) scale(0.7);
 	}
 }
 .leaf-skiny-alt {
 	right: -6rem;
-	top: -8rem;
-	transform: rotateZ(-150deg) rotateY(-180deg) skew(10deg, 5deg) scale(1.2);
+	top: -9rem;
+	transform: rotateZ(-130deg) skew(10deg, 5deg) scale(0.9);
 	animation-delay: 6s;
 	@media screen and (max-width: $screen-lg) {
 		right: -7rem;
-		top: -9rem;
-		transform: rotateZ(-160deg) rotateY(-180deg) skew(10deg, 5deg) scale(1);
+		top: -10rem;
+		transform: rotateZ(-140deg) skew(10deg, 5deg) scale(0.8);
 	}
 	@media screen and (max-width: $screen-md) {
-		right: -8rem;
-		top: -10rem;
-		transform: rotateZ(-170deg) rotateY(-180deg) skew(10deg, 5deg) scale(0.8);
+		right: -10rem;
+		top: -11rem;
+		transform: rotateZ(-150deg) skew(10deg, 5deg) scale(0.7);
 	}
 	@media screen and (max-width: $screen-sm) {
-		right: -9rem;
-		top: -12rem;
-		transform: rotateZ(-180deg) rotateY(-180deg) skew(10deg, 5deg) scale(0.6);
+		right: -12rem;
+		top: -18rem;
+		transform: rotateZ(-160deg) skew(10deg, 5deg) scale(0.6);
 	}
 }
 </style>
