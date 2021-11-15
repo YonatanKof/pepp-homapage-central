@@ -7,7 +7,8 @@
 </template>
 
 <style lang="scss">
-:root {
+html,
+body {
 	--main-links-height: 3rem;
 }
 .main-links {
@@ -19,7 +20,7 @@
 	gap: 1em;
 	padding: 0 1rem;
 	@include content-spacing;
-	background-color: #5d8009;
+	background-color: var(--color-primary-extra-dark);
 	a {
 		color: white;
 		font-weight: 500;
