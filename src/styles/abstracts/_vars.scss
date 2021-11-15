@@ -45,6 +45,14 @@ $shadow-box-hard: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.16), 
 
 	--color-system-invert-values: 0, 0%, 100%;
 	--color-system-invert: hsl(var(--color-system-invert-values));
+
+	--color-primary-super-dark: hsl(78, 80%, 19%);
+	--color-primary-extra-dark: hsl(78, 80%, 27%);
+	--color-primary-dark: hsl(78, 80%, 31%);
+	--color-primary-main: hsl(78, 80%, 38%);
+	--color-primary-light: hsl(78, 70%, 45%);
+	--color-primary-extra-light: hsl(78, 60%, 55%);
+	--color-primary-super-light: hsl(78, 55%, 65%);
 }
 $color-system-1-full: var(--color-system);
 $color-system-2-dimmed: hsla(var(--color-system-values), 0.8);
@@ -63,7 +71,7 @@ $color-link: #1766a6;
 $color-link-active: #0f0e69;
 
 //! Interface Size
-:root {
+body, html {
 	--header-height: 4rem;
 }
 $header-height: var(--header-height);
