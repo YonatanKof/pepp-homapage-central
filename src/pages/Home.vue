@@ -102,28 +102,40 @@ section {
 .leaf-full {
 	right: -1rem;
 	bottom: -18rem;
-	transform: rotateZ(-50deg) scale(0.8);
+	transform: rotateZ(-50deg) scale(1);
+	@media screen and (max-width: $screen-xl) {
+		transform: rotateZ(-40deg) scale(0.9);
+	}
 	@media screen and (max-width: $screen-lg) {
 		right: -2rem;
 		bottom: -19rem;
-		transform: rotateZ(-30deg) scale(0.7);
+		transform: rotateZ(-30deg) scale(0.8);
 	}
 	@media screen and (max-width: $screen-md) {
 		right: -5rem;
 		bottom: -20rem;
-		transform: rotateZ(-25deg) scale(0.6);
+		transform: rotateZ(-25deg) scale(0.7);
 	}
 	@media screen and (max-width: $screen-sm) {
 		right: -9rem;
 		bottom: -23rem;
-		transform: rotateZ(-20deg) scale(0.5);
+		transform: rotateZ(-20deg) scale(0.6);
 	}
 }
 .leaf-round {
 	left: -6rem;
 	top: -2rem;
-	transform: rotateZ(-25deg) scale(1) skew(5deg, 5deg);
 	animation-delay: 2s;
+	transform: rotateZ(-20deg) scale(1.3) skew(5deg, 5deg);
+	@media screen and (max-width: $screen-3xl) {
+		transform: rotateZ(-25deg) scale(1.2) skew(5deg, 5deg);
+	}
+	@media screen and (max-width: $screen-2xl) {
+		transform: rotateZ(-25deg) scale(1.1) skew(5deg, 5deg);
+	}
+	@media screen and (max-width: $screen-xl) {
+		transform: rotateZ(-25deg) scale(1) skew(5deg, 5deg);
+	}
 	@media screen and (max-width: $screen-lg) {
 		left: -7rem;
 		top: -2.5rem;
@@ -143,8 +155,14 @@ section {
 .leaf-skiny {
 	left: -6rem;
 	bottom: -10rem;
-	transform: rotateZ(45deg) scale(0.9);
 	animation-delay: 4s;
+	transform: rotateZ(55deg) scale(1.1);
+	@media screen and (max-width: $screen-2xl) {
+		transform: rotateZ(50deg) scale(1);
+	}
+	@media screen and (max-width: $screen-xl) {
+		transform: rotateZ(45deg) scale(0.9);
+	}
 	@media screen and (max-width: $screen-lg) {
 		left: -11rem;
 		transform: rotateZ(40deg) scale(0.8);
@@ -162,8 +180,14 @@ section {
 .leaf-skiny-alt {
 	right: -6rem;
 	top: -9rem;
-	transform: rotateZ(-130deg) skew(10deg, 5deg) scale(0.9);
+	transform: rotateZ(-110deg) skew(10deg, 5deg) scale(1.1);
 	animation-delay: 6s;
+	@media screen and (max-width: $screen-2xl) {
+		transform: rotateZ(-120deg) skew(10deg, 5deg) scale(1);
+	}
+	@media screen and (max-width: $screen-xl) {
+		transform: rotateZ(-130deg) skew(10deg, 5deg) scale(0.9);
+	}
 	@media screen and (max-width: $screen-lg) {
 		right: -7rem;
 		top: -10rem;
