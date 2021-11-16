@@ -1,7 +1,9 @@
 <template>
 	<aside id="sidebar">
 		<div id="response-menu" class="response-menu">
-			<button @click="showSidebar = !showSidebar" class="button-regular title-lg color-system" id="btn">My Lists</button>
+			<button @click="showSidebar = !showSidebar, manuState = manuState === 'Hide' ? 'Show' : 'Hide'" class="button-regular title-lg color-system" id="btn">
+				{{ manuState }} My Lists
+			</button>
 		</div>
 		<div id="sidebar-sm" :class="compClasses" class="sidebar-sm sidebar-menu">
 			<div class="baselist">
@@ -66,6 +68,7 @@ export default {
 	data() {
 		return {
 			showSidebar: false,
+			manuState: "Show",
 		};
 	},
 	computed: {
@@ -79,6 +82,9 @@ export default {
 </script>
 
 <style lang="scss">
+// button {
+// 	color: v-bind(myColor);
+// }
 .sidebar-menu {
 	display: flex;
 	flex-direction: column;
