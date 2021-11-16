@@ -7,8 +7,8 @@ import DropdownUser from "../DropdownUser.vue";
 	<header class="food-header">
 		<div class="wrapper header max-w">
 			<div class="header-start">
-				<router-link class="logo" to="/food-demo">
-					<img src="/FoodDemo/Foodies.svg" />
+				<router-link to="/food-demo">
+					<img class="logo" src="/FoodDemo/Foodies.svg" />
 				</router-link>
 			</div>
 			<div class="header-end">
@@ -27,7 +27,10 @@ $food-color-main: rgb(48, 37, 29);
 	top: 0;
 	z-index: 1000;
 	.max-w {
-		max-width: $screen-2xl;
+		max-width: $screen-3xl;
+	}
+	.logo{
+		height: 2.5rem;
 	}
 }
 </style>
