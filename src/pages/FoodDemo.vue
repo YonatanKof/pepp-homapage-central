@@ -43,7 +43,7 @@ $food-grid-gap: 1.5rem;
 	grid-template-rows: 24rem 1fr;
 	grid-template-columns: 1fr 13.5rem;
 	grid-column-gap: 1.5rem;
-	max-width: $screen-2xl;
+	max-width: $screen-3xl;
 	gap: $food-grid-gap;
 	padding: 1.5rem;
 	@media screen and (max-width: $screen-xl) {
