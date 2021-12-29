@@ -84,7 +84,7 @@ button {
 	@include state-strong;
 	@include button-spacing;
 	color: $color-system-1-full;
-	background: $color-system-invert-1-full;
+	background: var(--color-system-invert-10);
 }
 
 .button-icon {

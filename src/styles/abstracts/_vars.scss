@@ -115,10 +115,7 @@ $box-height-overlay: 40px;
 		transition: all 0.25s; // same as 'pep-btn' @mixin
 		display: block;
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		inset: 0;
 		border-radius: inherit;
 		border: $width $style $color;
 	}
@@ -188,9 +185,8 @@ $box-height-overlay: 40px;
 @mixin state-strong {
 	@include hover-anim;
 	font-size: var(--font-size-01);
-	color: $color-system-invert-1-full;
-	// background-color: hsl(var(--color-system-values));
-	background-color: var(--color-system);
+	color: var(--color-system-invert-10);
+	background-color: var(--color-system-10);
 	border-radius: $border-radius;
 	box-shadow: $shadow-box;
 	font-weight: 600;
