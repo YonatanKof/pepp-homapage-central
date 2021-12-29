@@ -1,6 +1,6 @@
 <template>
 	<div id="user-dd" class="dropdown">
-		<ButtonIcon v-click-outside="hideUserMenu" @click="isShowUserData = !isShowUserData">
+		<ButtonIcon v-click-outside.notouch="hideUserMenu" @click="isShowUserData = !isShowUserData">
 			<IconAvatar />
 		</ButtonIcon>
 		<div v-if="isShowUserData" class="dropdown-content-end" id="myDropdown">
