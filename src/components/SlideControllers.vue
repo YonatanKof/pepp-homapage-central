@@ -105,8 +105,14 @@ $radio-size: 1rem;
 		background-color: $color-system-2-dimmed;
 	}
 	&:active,
-	&:focus {
-		box-shadow: $shadow-box-focus;
+	&:focus-visible {
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			box-shadow: $shadow-box-focus;
+			overflow: visible !important;
+		}
 	}
 }
 </style>
