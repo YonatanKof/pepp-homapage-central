@@ -1,7 +1,11 @@
 <template>
 	<aside id="sidebar">
 		<div id="response-menu" class="response-menu">
-			<button @click="showSidebar = !showSidebar, manuState = manuState === 'Hide' ? 'Show' : 'Hide'" class="button-regular title-lg color-system" id="btn">
+			<button
+				@click="(showSidebar = !showSidebar), (manuState = manuState === 'Hide' ? 'Show' : 'Hide')"
+				class="button-regular title-lg color-system"
+				id="btn"
+			>
 				{{ manuState }} My Lists
 			</button>
 		</div>
@@ -82,9 +86,6 @@ export default {
 </script>
 
 <style lang="scss">
-// button {
-// 	color: v-bind(myColor);
-// }
 .sidebar-menu {
 	display: flex;
 	flex-direction: column;
@@ -124,11 +125,12 @@ export default {
 
 @media screen and (max-width: $screen-md) {
 	.sidebar-menu {
-		background: $color-system-invert-1-full;
+		background: var(--color-system-invert-10);
 	}
 	#sidebar {
 		position: absolute;
-		z-index: 1000;
+		// position: sticky;
+		z-index: 900;
 		min-width: 100vw;
 		height: 100%;
 	}
@@ -146,7 +148,7 @@ export default {
 		box-sizing: border-box;
 		width: 100%;
 		height: 4rem;
-		background-color: $color-system-invert-1-full;
+		background-color: var(--color-system-invert-10);
 		box-shadow: $shadow-box;
 		position: relative;
 		z-index: 500;
@@ -166,7 +168,7 @@ export default {
 		position: fixed;
 		inset: 0px;
 		top: calc(var(--main-links-height) + var(--header-height));
-		background-color: $color-system-2-dimmed;
+		background-color: var(--color-system-08);
 		z-index: -100;
 	}
 }

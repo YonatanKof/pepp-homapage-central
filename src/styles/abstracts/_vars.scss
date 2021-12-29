@@ -42,10 +42,20 @@ $shadow-box-hard: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.16), 
 //! Colors
 :root {
 	--color-system-values: 0, 0%, 4%;
-	--color-system: hsl(var(--color-system-values));
+	--color-system-10: hsla(var(--color-system-values), 1);
+	--color-system-08: hsla(var(--color-system-values), 0.8);
+	--color-system-06: hsla(var(--color-system-values), 0.5);
+	--color-system-04: hsla(var(--color-system-values), 0.25);
+	--color-system-02: hsla(var(--color-system-values), 0.08);
+	--color-system-00: hsla(var(--color-system-values), 0);
 
 	--color-system-invert-values: 0, 0%, 100%;
-	--color-system-invert: hsl(var(--color-system-invert-values));
+	--color-system-invert-10: hsla(var(--color-system-invert-values), 1);
+	--color-system-invert-08: hsla(var(--color-system-invert-values), 0.8);
+	--color-system-invert-06: hsla(var(--color-system-invert-values), 0.5);
+	--color-system-invert-04: hsla(var(--color-system-invert-values), 0.25);
+	--color-system-invert-02: hsla(var(--color-system-invert-values), 0.08);
+	--color-system-invert-00: hsla(var(--color-system-invert-values), 0);
 
 	--color-primary-super-dark: hsl(78, 80%, 19%);
 	--color-primary-extra-dark: hsl(78, 80%, 27%);
@@ -55,7 +65,7 @@ $shadow-box-hard: 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.16), 
 	--color-primary-extra-light: hsl(78, 60%, 55%);
 	--color-primary-super-light: hsl(78, 55%, 65%);
 }
-$color-system-1-full: var(--color-system);
+$color-system-1-full: hsla(var(--color-system-values), 1);
 $color-system-2-dimmed: hsla(var(--color-system-values), 0.8);
 $color-system-3-dim: hsla(var(--color-system-values), 0.25);
 $color-system-4-weak: hsla(var(--color-system-values), 0.08);
@@ -72,7 +82,8 @@ $color-link: #1766a6;
 $color-link-active: #0f0e69;
 
 //! Interface Size
-body, html {
+body,
+html {
 	--header-height: 4rem;
 }
 $header-height: var(--header-height);
@@ -104,10 +115,7 @@ $box-height-overlay: 40px;
 		transition: all 0.25s; // same as 'pep-btn' @mixin
 		display: block;
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		inset: 0;
 		border-radius: inherit;
 		border: $width $style $color;
 	}
@@ -133,7 +141,7 @@ $box-height-overlay: 40px;
 		background-color: $color-system-3-dim;
 	}
 	&:active,
-	&:focus {
+	&:focus-visible {
 		box-shadow: $shadow-box-focus;
 	}
 	.start-icon {
@@ -164,17 +172,21 @@ $box-height-overlay: 40px;
 		box-shadow: $shadow-box-soft-hover;
 	}
 	&:active,
-	&:focus {
-		border: 1px solid $color-system-1-full;
+	&:focus-visible {
 		box-shadow: $shadow-box-focus;
+		// &::after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	inset: 0;
+		// 	overflow: visible !important;
+		// }
 	}
 }
 @mixin state-strong {
 	@include hover-anim;
 	font-size: var(--font-size-01);
-	color: $color-system-invert-1-full;
-	// background-color: hsl(var(--color-system-values));
-	background-color: var(--color-system);
+	color: var(--color-system-invert-10);
+	background-color: var(--color-system-10);
 	border-radius: $border-radius;
 	box-shadow: $shadow-box;
 	font-weight: 600;
@@ -184,12 +196,9 @@ $box-height-overlay: 40px;
 		// transform: translateY(-1px);
 	}
 	&:active,
-	&:focus {
+	&:focus-visible {
 		box-shadow: $shadow-box-focus;
 	}
-	// &:active {
-	// 	transform: unset;
-	// }
 }
 @mixin clickable-image-base {
 	background-repeat: no-repeat;
@@ -205,7 +214,7 @@ $box-height-overlay: 40px;
 		transform: scale(1.015);
 	}
 	&:active,
-	&:focus {
+	&:focus-visible {
 		box-shadow: $shadow-box-focus-hover;
 	}
 }

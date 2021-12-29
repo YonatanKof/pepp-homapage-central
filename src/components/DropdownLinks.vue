@@ -1,6 +1,6 @@
 <template>
 	<div id="links-dd" class="dropdown">
-		<ButtonIcon class="hidden-on-web" v-click-outside="hideLinksMenu" @click="isShowHeaderLinks = !isShowHeaderLinks">
+		<ButtonIcon class="hidden-on-web" v-click-outside.notouch="hideLinksMenu" @click="isShowHeaderLinks = !isShowHeaderLinks">
 			<IconMenu />
 		</ButtonIcon>
 		<div v-if="isShowHeaderLinks" class="dropdown-content-end" id="menuDropdown">
